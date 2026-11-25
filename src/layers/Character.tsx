@@ -5,6 +5,7 @@ import { Volt } from "./characters/Volt";
 import type { ActingState } from "../acting";
 import type { Emotion, Shot } from "../types";
 import { styleOf } from "../styles";
+import { softDrop } from "./Background";
 import { impulse, lerp, wobble } from "../motion";
 
 type Props = {
@@ -107,7 +108,7 @@ export const Character: React.FC<Props> = ({ preset, name, chapterT, speaking, a
   // so the torso still reaches the bottom of the frame
   const bodyBottom = Math.max(height, py + (height - py) / ps);
   return (
-    <svg width={width} height={height} style={{ position: "absolute", inset: 0, filter: styled ? undefined : "drop-shadow(0 18px 28px rgba(0,0,0,0.55))" }}>
+    <svg width={width} height={height} style={{ position: "absolute", inset: 0, filter: styled ? undefined : softDrop(preset, 18, 28, 0.55) }}>
       <g transform={`translate(${px} ${py}) rotate(${prot}) scale(${ps}) translate(${-px} ${-py})`}>
         <Drawing
           cx={px + sway}
@@ -123,6 +124,7 @@ export const Character: React.FC<Props> = ({ preset, name, chapterT, speaking, a
           accent={preset.accent}
           squash={squash}
           gesture={directed ? { kind: acting!.gesture, k: acting!.gestureK } : undefined}
+          look={preset.character}
         />
       </g>
     </svg>

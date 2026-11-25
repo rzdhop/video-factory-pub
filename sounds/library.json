@@ -31,6 +31,31 @@
    "sha256": "308b8b357c771f3c770c9e7033d7e89dd284de2adc5cdb6ba04c0f32cc28aede",
    "added": "2026-11-13"
   },
+  "clapper": {
+   "source": "openverse",
+   "provider": "freesound",
+   "openverse_id": "06d35121-55a5-4edb-8cf9-256f7901664c",
+   "title": "Slate Board.wav",
+   "creator": "190175",
+   "landing_url": "https://freesound.org/people/190175/sounds/490343",
+   "source_url": "https://cdn.freesound.org/previews/490/490343_10586015-hq.mp3",
+   "license": "by 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "attribution": "\"Slate Board.wav\" by 190175 is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+   "match": {
+    "query": "a film clapperboard snapping shut",
+    "z": 3.18,
+    "verdict": "strong",
+    "sounds_most_like": "a wooden block hit (z +3.4)"
+   },
+   "dur_s": 1.0,
+   "onset_s": 0.0051,
+   "peak_s": 0.0057,
+   "loud_db": -19.03,
+   "file": "files/clapper.wav",
+   "sha256": "d3fe0c11a2dc2f72abb4714ceec61e760c8a037b91c26f44b21a98c339db8b25",
+   "added": "2026-11-25"
+  },
   "cut-hit": {
    "source": "earshot-bank",
    "bank_id": "cut_hit/punch",
@@ -101,6 +126,31 @@
    "file": "files/flush.wav",
    "sha256": "ee844a63e66c54f0da2b9baac3524f915db9bbab17d13708a3b6c4ebc49d54ab",
    "added": "2026-11-13"
+  },
+  "machine-stop": {
+   "source": "openverse",
+   "provider": "freesound",
+   "openverse_id": "9bb76b13-6fdb-484a-b47d-e0891573a0a4",
+   "title": "Sc-fi Machine Power-Down",
+   "creator": "astrand",
+   "landing_url": "https://freesound.org/people/astrand/sounds/318782",
+   "source_url": "https://cdn.freesound.org/previews/318/318782_2820889-hq.mp3",
+   "license": "cc0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": null,
+   "match": {
+    "query": "a machine powering down",
+    "z": 4.1,
+    "verdict": "strong",
+    "sounds_most_like": "a downlifter falling sweep (z +3.9)"
+   },
+   "dur_s": 2.2,
+   "onset_s": 0.0261,
+   "peak_s": 1.7465,
+   "loud_db": -8.41,
+   "file": "files/machine-stop.wav",
+   "sha256": "9cf3dc5a400324a87ef516b0de6e22eea74690de974695904c5f5edf834d710d",
+   "added": "2026-11-25"
   },
   "plop": {
    "source": "earshot-bank",

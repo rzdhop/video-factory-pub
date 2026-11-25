@@ -1,0 +1,122 @@
+{
+ "episode": "ep-001-made-by-ai",
+ "errors": [],
+ "warnings": [
+  "1 credit line(s) owed in the caption: `python3 tools/sound_lib.py credits episodes/ep-001-made-by-ai`",
+  "earshot heard 78 % of the 9 effects within one frame of their cue (median offset 11.7 ms)"
+ ],
+ "info": [
+  "music and effects sit 10.4 dB under the voice while it speaks",
+  "9 effects (plan events and cut hits) sit -2 to +5 dB from the loud syllables of the voice, inside the validated range (-8 to +10)",
+  "master at -14.1 LUFS, true peak -1.2 dBTP"
+ ],
+ "credits": [
+  "\"Slate Board.wav\" by 190175 is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/."
+ ],
+ "bed_under_voice_db": -10.4,
+ "mix_peak_dbfs": -0.1,
+ "effects": [
+  {
+   "t": 2.39,
+   "role": "clapper",
+   "sound": "clapper",
+   "fx_db": -15.7,
+   "over_bed_db": 30.0,
+   "vs_voice_db": 3.2
+  },
+  {
+   "t": 4.92,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "fx_db": -17.3,
+   "over_bed_db": 17.5,
+   "vs_voice_db": 1.6
+  },
+  {
+   "t": 6.26,
+   "role": "pop",
+   "sound": "pop",
+   "fx_db": -18.8,
+   "over_bed_db": 14.2,
+   "vs_voice_db": 0.1
+  },
+  {
+   "t": 9.23,
+   "role": "thud",
+   "sound": "thud",
+   "fx_db": -18.0,
+   "over_bed_db": 16.5,
+   "vs_voice_db": 0.9
+  },
+  {
+   "t": 11.6,
+   "role": "pop",
+   "sound": "pop",
+   "fx_db": -13.6,
+   "over_bed_db": 31.3,
+   "vs_voice_db": 5.3
+  },
+  {
+   "t": 16.39,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "fx_db": -17.4,
+   "over_bed_db": 16.9,
+   "vs_voice_db": 1.5
+  },
+  {
+   "t": 17.96,
+   "role": "machine-stop",
+   "sound": "machine-stop",
+   "fx_db": -20.8,
+   "over_bed_db": 15.8,
+   "vs_voice_db": -1.9
+  },
+  {
+   "t": 20.06,
+   "role": "pop",
+   "sound": "pop",
+   "fx_db": -13.6,
+   "over_bed_db": 7.3,
+   "vs_voice_db": 5.3
+  },
+  {
+   "t": 20.53,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "fx_db": -17.4,
+   "over_bed_db": -3.8,
+   "vs_voice_db": 1.5
+  }
+ ],
+ "sync": {
+  "stats": {
+   "n": 9,
+   "hit_within_1_frame": 0.778,
+   "hit_within_100ms": 0.778,
+   "median_abs_offset_ms": 11.7,
+   "answered_by_swell": 0,
+   "answered_by_level_peak": 2,
+   "no_sound": [],
+   "frame_ms": 33.3,
+   "chance_within_1_frame": 0.437,
+   "chance_within_100ms": 0.856,
+   "accent_min_db": 12.9,
+   "accent_within_1_frame": 0.556,
+   "accent_chance_within_1_frame": 0.08,
+   "accent_within_100ms": 0.556,
+   "accent_chance_within_100ms": 0.191
+  },
+  "not_ok": []
+ },
+ "mix_loudness": {
+  "integrated_lufs": -19.0,
+  "true_peak_dbtp": 0.0,
+  "lra_lu": 1.7
+ },
+ "master_loudness": {
+  "integrated_lufs": -14.1,
+  "true_peak_dbtp": -1.2,
+  "lra_lu": 1.6
+ }
+}

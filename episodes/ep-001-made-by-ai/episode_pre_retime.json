@@ -1,0 +1,348 @@
+{
+ "id": "ep-001-made-by-ai",
+ "title": "Can an AI make this video by itself?",
+ "preset": "dark-2d",
+ "character": "host",
+ "fps": 30,
+ "format": "humour-express",
+ "layout": 2,
+ "opening": {
+  "title": "CAN AN AI | MAKE THIS VIDEO | BY *ITSELF*?",
+  "host": "hidden",
+  "place": "below"
+ },
+ "look": {
+  "id": "video-factory",
+  "extends": "dark-2d",
+  "description": "The project's own brand: a printed poster. Flat ink ground, paper shapes, one vermilion accent on the single focus of each frame. For the presentation videos of video-factory.",
+  "bg": {
+   "top": "#16141F",
+   "bottom": "#16141F",
+   "light": "#16141F",
+   "light2": "#16141F",
+   "dust": 0,
+   "grain": 0,
+   "spot": 0,
+   "vignette": 0,
+   "floor": false,
+   "grid": false,
+   "lights": 0,
+   "burst": 0,
+   "shadow": 0
+  },
+  "accent": "#FF5A36",
+  "accentAlt": "#A39E93",
+  "textPrimary": "#F4F1EA",
+  "textHud": "rgba(244,241,234,0.9)",
+  "lineColor": "#F4F1EA",
+  "caption": {
+   "bloom": 0,
+   "glow": 0,
+   "softShadow": 0,
+   "titlePad": 0
+  },
+  "fontKinetic": "Anton",
+  "fontHud": "Space Grotesk",
+  "fontMono": "JetBrains Mono",
+  "kit": {
+   "color": {
+    "ink": "#16141F",
+    "cyan": "#D9D4C7",
+    "green": "#F4F1EA",
+    "pink": "#A39E93",
+    "violet": "#6F6B66",
+    "steel": "#8C877D",
+    "grid": "rgba(244,241,234,0.14)"
+   },
+   "stroke": {
+    "thin": 4,
+    "base": 6,
+    "bold": 10
+   },
+   "radius": {
+    "sm": 10,
+    "md": 18,
+    "lg": 28
+   },
+   "depth": 8
+  }
+ },
+ "lang": "en",
+ "voice": {
+  "file": "voice.wav",
+  "lang": "en",
+  "engine": "human",
+  "ref_file": "voice_ref_espeak.wav"
+ },
+ "duration": 27.967,
+ "chapters": [
+  {
+   "key": "hook",
+   "label": "THE · QUESTION",
+   "scene": "ep001-hook",
+   "hud": {},
+   "t_start": 0.0,
+   "t_end": 4.57
+  },
+  {
+   "key": "line",
+   "label": "THE · LINE",
+   "scene": "ep001-line",
+   "transition": "whip-left",
+   "hud": {},
+   "t_start": 4.57,
+   "t_end": 15.69
+  },
+  {
+   "key": "human",
+   "label": "THE · HUMAN",
+   "scene": "ep001-human",
+   "transition": "whip-left",
+   "hud": {},
+   "t_start": 15.69,
+   "t_end": 19.13
+  },
+  {
+   "key": "question",
+   "label": "YOUR · TURN",
+   "scene": "ep001-question",
+   "transition": "zoom",
+   "hud": {},
+   "t_start": 19.13,
+   "t_end": 27.367
+  }
+ ],
+ "words": [
+  {
+   "text": "Can an AI",
+   "t_start": 0.0,
+   "t_end": 0.59,
+   "accent": null,
+   "chapter": "hook"
+  },
+  {
+   "text": "make this video",
+   "t_start": 0.59,
+   "t_end": 1.4,
+   "accent": null,
+   "chapter": "hook"
+  },
+  {
+   "text": "by itself?",
+   "t_start": 1.4,
+   "t_end": 1.82,
+   "accent": "itself",
+   "chapter": "hook"
+  },
+  {
+   "text": "Almost.",
+   "t_start": 2.04,
+   "t_end": 2.55,
+   "accent": "Almost",
+   "chapter": "hook"
+  },
+  {
+   "text": "It had to ask",
+   "t_start": 2.77,
+   "t_end": 3.36,
+   "accent": null,
+   "chapter": "hook"
+  },
+  {
+   "text": "a person",
+   "t_start": 3.36,
+   "t_end": 3.83,
+   "accent": null,
+   "chapter": "hook"
+  },
+  {
+   "text": "three times.",
+   "t_start": 3.83,
+   "t_end": 4.56,
+   "accent": "three",
+   "chapter": "hook"
+  },
+  {
+   "text": "It pitched three ideas;",
+   "t_start": 4.79,
+   "t_end": 5.91,
+   "accent": "ideas",
+   "chapter": "line"
+  },
+  {
+   "text": "a person picked one.",
+   "t_start": 5.91,
+   "t_end": 6.92,
+   "accent": "picked",
+   "chapter": "line"
+  },
+  {
+   "text": "It wrote the script,",
+   "t_start": 7.14,
+   "t_end": 8.11,
+   "accent": null,
+   "chapter": "line"
+  },
+  {
+   "text": "and a second agent",
+   "t_start": 8.11,
+   "t_end": 8.88,
+   "accent": "agent",
+   "chapter": "line"
+  },
+  {
+   "text": "checked every fact.",
+   "t_start": 8.88,
+   "t_end": 9.91,
+   "accent": "fact",
+   "chapter": "line"
+  },
+  {
+   "text": "It asked again",
+   "t_start": 10.13,
+   "t_end": 10.74,
+   "accent": null,
+   "chapter": "line"
+  },
+  {
+   "text": "before paying",
+   "t_start": 10.74,
+   "t_end": 11.25,
+   "accent": null,
+   "chapter": "line"
+  },
+  {
+   "text": "for the voice.",
+   "t_start": 11.25,
+   "t_end": 11.91,
+   "accent": "voice",
+   "chapter": "line"
+  },
+  {
+   "text": "It drew every scene",
+   "t_start": 12.13,
+   "t_end": 13.05,
+   "accent": null,
+   "chapter": "line"
+  },
+  {
+   "text": "in code.",
+   "t_start": 13.05,
+   "t_end": 13.43,
+   "accent": "code",
+   "chapter": "line"
+  },
+  {
+   "text": "It can't hear,",
+   "t_start": 13.59,
+   "t_end": 14.21,
+   "accent": "hear",
+   "chapter": "line"
+  },
+  {
+   "text": "so it picks sounds",
+   "t_start": 14.21,
+   "t_end": 15.06,
+   "accent": null,
+   "chapter": "line"
+  },
+  {
+   "text": "by their score.",
+   "t_start": 15.06,
+   "t_end": 15.71,
+   "accent": "score",
+   "chapter": "line"
+  },
+  {
+   "text": "Then it renders,",
+   "t_start": 15.91,
+   "t_end": 16.86,
+   "accent": null,
+   "chapter": "human"
+  },
+  {
+   "text": "and stops.",
+   "t_start": 16.86,
+   "t_end": 17.43,
+   "accent": "stops",
+   "chapter": "human"
+  },
+  {
+   "text": "Last question:",
+   "t_start": 17.65,
+   "t_end": 18.41,
+   "accent": null,
+   "chapter": "human"
+  },
+  {
+   "text": "may I post it?",
+   "t_start": 18.41,
+   "t_end": 19.23,
+   "accent": "post",
+   "chapter": "human"
+  },
+  {
+   "text": "The engine",
+   "t_start": 19.35,
+   "t_end": 19.89,
+   "accent": null,
+   "chapter": "question"
+  },
+  {
+   "text": "and its rulebook",
+   "t_start": 19.89,
+   "t_end": 20.64,
+   "accent": "rulebook",
+   "chapter": "question"
+  },
+  {
+   "text": "are open source:",
+   "t_start": 20.64,
+   "t_end": 21.55,
+   "accent": "source",
+   "chapter": "question"
+  },
+  {
+   "text": "your AI",
+   "t_start": 21.55,
+   "t_end": 22.2,
+   "accent": null,
+   "chapter": "question"
+  },
+  {
+   "text": "can make yours.",
+   "t_start": 22.2,
+   "t_end": 22.9,
+   "accent": "yours",
+   "chapter": "question"
+  },
+  {
+   "text": "Would you give an AI",
+   "t_start": 23.12,
+   "t_end": 24.07,
+   "accent": "you",
+   "chapter": "question"
+  },
+  {
+   "text": "the director's chair?",
+   "t_start": 24.07,
+   "t_end": 24.84,
+   "accent": "chair",
+   "chapter": "question"
+  },
+  {
+   "text": "The code's on GitHub,",
+   "t_start": 25.0,
+   "t_end": 26.01,
+   "accent": "GitHub",
+   "chapter": "question"
+  },
+  {
+   "text": "link in the bio.",
+   "t_start": 26.01,
+   "t_end": 26.86,
+   "accent": null,
+   "chapter": "question"
+  }
+ ]
+}

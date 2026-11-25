@@ -187,6 +187,23 @@
   "formats": ""
  },
  {
+  "key": "style:video-factory",
+  "kind": "style",
+  "id": "video-factory",
+  "name": "video-factory",
+  "info": "The project's own brand: a printed poster. Flat ink ground, paper shapes, one vermilion accent on the single focus of each frame. For the presentation videos of video-factory.",
+  "status": "ready",
+  "thumb": "",
+  "character": "",
+  "voice": "",
+  "target_s": null,
+  "max_s": null,
+  "production": "",
+  "hook": "",
+  "repo": "looks/video-factory.json",
+  "formats": ""
+ },
+ {
   "key": "idea:example-row-replace-it-bananas-are-slig",
   "kind": "idea",
   "id": "example-row-replace-it-bananas-are-slig",

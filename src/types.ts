@@ -9,7 +9,7 @@ export type MediaItem = {
   /** seconds into the source video */
   start?: number; credit?: string;
 };
-export type Opening = { title: string; until?: string; host?: "bust" | "hidden"; place?: "caption" | "below" };
+export type Opening = { title: string; until?: string; host?: "bust" | "hidden"; place?: "caption" | "below"; /** px (at 1920 high) added to the top of a `place: "below"` title */ dy?: number };
 export type Series = {
   slug: string;
   part: number;
@@ -64,14 +64,22 @@ export type KitStyle = {
   radius?: Partial<Record<"sm" | "md" | "lg", number>>;
   depth?: number;
 };
-/** Optional parts of the set, set by a look: floor line on/off, spotlight strength 0..1, vignette strength, grid. */
-export type BgStyle = { grid?: boolean; gridColor?: string; floor?: boolean; spot?: number; vignette?: number; light?: string; light2?: string; dust?: number };
+/** Optional parts of the set, set by a look: floor line on/off, spotlight strength 0..1, vignette strength, grid.
+ *  `lights` = strength of the two drifting coloured lights (default 1, 0 = none); `burst` = strength of the rays
+ *  behind a close-up (default 1, 0 = none); `shadow` = strength of the soft drop shadows under the scene and the
+ *  host (default 1, 0 = none). */
+export type BgStyle = { grid?: boolean; gridColor?: string; floor?: boolean; spot?: number; vignette?: number; light?: string; light2?: string; dust?: number; lights?: number; burst?: number; shadow?: number };
 type BasePreset = typeof import("../presets/dark-2d.json");
 /** Caption extras (all optional, set by a layout or a look):
  *  `anchor` "bottom" = `y` is the BOTTOM edge of the caption block, a second line grows upward (default: top edge);
  *  `band` 0..1 = strength of the soft dark band drawn behind the captions (0 or missing: none);
- *  `closeY` / `closeBand` = where the captions go during a close-up of the host and how strong the band gets there. */
-export type CaptionStyle = BasePreset["caption"] & { anchor?: string; band?: number; closeY?: number; closeBand?: number };
+ *  `closeY` / `closeBand` = where the captions go during a close-up of the host and how strong the band gets there;
+ *  `bloom` = strength of the accent bloom behind the caption on an accented word (default 1, 0 = none);
+ *  `glow` = strength of the glow of the accent word, captions and opening title (default 1, 0 = none);
+ *  `softShadow` = strength of the blurred shadow under the outline of captions and title (default 1, 0 = hard outline only);
+ *  `titlePad` = strength of the soft dark pad behind the opening title (default 1, 0 = none);
+ *  `titleBar` = the accent bar that runs under the word being said in the opening title (default 1, 0 = none). */
+export type CaptionStyle = BasePreset["caption"] & { anchor?: string; band?: number; closeY?: number; closeBand?: number; bloom?: number; glow?: number; softShadow?: number; titlePad?: number; titleBar?: number };
 /** HUD extras: `barAbove` px between the progress bar and the label row (default 34); `badge` "inline" puts the
  *  series badge in the label row (default: above the progress bar); `square` = square dot. */
 export type HudStyle = BasePreset["hud"] & { barAbove?: number; badge?: string; square?: boolean };
@@ -87,9 +95,15 @@ export type LayoutOverride = {
   textHud?: string; hud?: Partial<HudStyle>; sceneBox?: Partial<SceneBox>; caption?: Partial<CaptionStyle>;
   host?: HostFraming; hostless?: HostlessLayout;
 };
-export type Preset = Omit<BasePreset, "bg" | "caption" | "hud" | "sceneBox" | "layouts"> & {
+/** Camera extras: `hitFlash` = strength of the white flash on a punchline hit (default 1, 0 = none). */
+export type CameraStyle = BasePreset["camera"] & { hitFlash?: number };
+export type Preset = Omit<BasePreset, "bg" | "caption" | "hud" | "sceneBox" | "layouts" | "camera"> & {
+  camera: CameraStyle;
   bg: BasePreset["bg"] & BgStyle; caption: CaptionStyle; hud: HudStyle; sceneBox: SceneBox;
   host?: HostFraming; hostless?: HostlessLayout; layouts?: Record<string, LayoutOverride>; kit?: KitStyle;
+  /** set by a look: `top` = colour of the host's top instead of the accent, `flat` 0..1 = how much of the host's
+   *  shading goes (1 = flat fills). A character reads them through its `look` prop; missing = its own drawing. */
+  character?: { top?: string; flat?: number };
   /** drawing style set by a look: an id registered in src/styles/index.ts, which switches the builders of the
    *  set, captions, label, opening title and host. Missing or unknown = the default drawn style. */
   style?: string;

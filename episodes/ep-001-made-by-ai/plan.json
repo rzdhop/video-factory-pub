@@ -1,0 +1,312 @@
+{
+ "id": "ep-001-made-by-ai",
+ "title": "Can an AI make this video by itself?",
+ "format": "humour-express",
+ "lang": "en",
+ "layout": 2,
+ "preset": "dark-2d",
+ "character": "host",
+ "fps": 30,
+ "voice": {
+  "engine": "espeak-ng",
+  "voice": "en-us",
+  "rate": 135,
+  "pitch": 40,
+  "gap_sentence_ms": 220,
+  "gap_chapter_ms": 650
+ },
+ "look": "video-factory",
+ "chapters": [
+  {
+   "key": "hook",
+   "label": "THE · QUESTION",
+   "scene": "ep001-hook",
+   "hud": {}
+  },
+  {
+   "key": "line",
+   "label": "THE · LINE",
+   "scene": "ep001-line",
+   "transition": "whip-left",
+   "hud": {}
+  },
+  {
+   "key": "human",
+   "label": "THE · HUMAN",
+   "scene": "ep001-human",
+   "transition": "whip-left",
+   "hud": {}
+  },
+  {
+   "key": "question",
+   "label": "YOUR · TURN",
+   "scene": "ep001-question",
+   "transition": "zoom",
+   "hud": {}
+  }
+ ],
+ "music": {
+  "bpm": 90,
+  "level_db": -19,
+  "sections": {
+   "hook": "intro",
+   "line": "full",
+   "human": "half",
+   "question": "outro"
+  }
+ },
+ "sound_kit": "default",
+ "sfx_events": [
+  {
+   "chapter": "hook",
+   "word": "Almost",
+   "kind": "clapper",
+   "gain": 0.4
+  },
+  {
+   "chapter": "line",
+   "word": "picked one",
+   "kind": "pop",
+   "gain": 0.2
+  },
+  {
+   "chapter": "line",
+   "word": "fact",
+   "kind": "thud",
+   "gain": 0.2
+  },
+  {
+   "chapter": "line",
+   "word": "for the voice",
+   "kind": "pop",
+   "gain": 0.4
+  },
+  {
+   "chapter": "human",
+   "word": "stops",
+   "kind": "machine-stop",
+   "gain": 0.2,
+   "_why": "kept small: this 2.2 s sound runs under 'Last question: may I post it?'; at 0.4 it alone put the mix 7.9 dB under the voice"
+  },
+  {
+   "chapter": "human",
+   "word": "post",
+   "kind": "pop",
+   "gain": 0.4,
+   "offset": 0.25,
+   "_why": "on the press of the YES button (pressAt = b(\"may I\") + 0.25 in Ep001_human.tsx), after the tail of machine-stop and before the riser of the cut"
+  }
+ ],
+ "direction": [
+  {
+   "chapter": "hook",
+   "word": "Can an AI",
+   "emotion": "curious",
+   "shot": "bust"
+  },
+  {
+   "chapter": "hook",
+   "word": "Almost",
+   "emotion": "wink",
+   "shot": "bust"
+  },
+  {
+   "chapter": "hook",
+   "word": "had to ask",
+   "emotion": "smug",
+   "shot": "bust",
+   "gesture": "shrug"
+  },
+  {
+   "chapter": "hook",
+   "word": "three",
+   "emotion": "happy",
+   "shot": "bust",
+   "gesture": "point"
+  },
+  {
+   "chapter": "line",
+   "word": "pitched",
+   "emotion": "happy",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "picked one",
+   "emotion": "wink",
+   "shot": "bust",
+   "gesture": "point"
+  },
+  {
+   "chapter": "line",
+   "word": "script",
+   "emotion": "idle",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "agent",
+   "emotion": "curious",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "fact",
+   "emotion": "smug",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "asked again",
+   "emotion": "confused",
+   "shot": "bust",
+   "gesture": "shrug"
+  },
+  {
+   "chapter": "line",
+   "word": "for the voice",
+   "emotion": "happy",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "drew",
+   "emotion": "amazed",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "code",
+   "emotion": "smug",
+   "shot": "bust"
+  },
+  {
+   "chapter": "line",
+   "word": "hear",
+   "emotion": "confused",
+   "shot": "bust",
+   "gesture": "shrug"
+  },
+  {
+   "chapter": "line",
+   "word": "score",
+   "emotion": "deadpan",
+   "shot": "bust",
+   "gesture": "balance"
+  },
+  {
+   "chapter": "human",
+   "word": "renders",
+   "emotion": "happy",
+   "shot": "bust"
+  },
+  {
+   "chapter": "human",
+   "word": "stops",
+   "emotion": "deadpan",
+   "shot": "close"
+  },
+  {
+   "chapter": "human",
+   "word": "Last question",
+   "emotion": "curious",
+   "shot": "bust"
+  },
+  {
+   "chapter": "human",
+   "word": "post",
+   "emotion": "wink",
+   "shot": "bust",
+   "gesture": "point"
+  },
+  {
+   "chapter": "question",
+   "word": "engine",
+   "emotion": "happy",
+   "shot": "bust"
+  },
+  {
+   "chapter": "question",
+   "word": "open",
+   "emotion": "amazed",
+   "shot": "bust"
+  },
+  {
+   "chapter": "question",
+   "word": "yours",
+   "emotion": "happy",
+   "shot": "bust",
+   "gesture": "point"
+  },
+  {
+   "chapter": "question",
+   "word": "Would you",
+   "emotion": "curious",
+   "shot": "bust",
+   "gesture": "point"
+  },
+  {
+   "chapter": "question",
+   "word": "chair",
+   "emotion": "wink",
+   "shot": "bust"
+  },
+  {
+   "chapter": "question",
+   "word": "GitHub",
+   "emotion": "happy",
+   "shot": "bust",
+   "gesture": "point"
+  },
+  {
+   "chapter": "question",
+   "word": "bio",
+   "emotion": "smug",
+   "shot": "bust"
+  }
+ ],
+ "opening": {
+  "title": "CAN AN AI | MAKE THIS VIDEO | BY *ITSELF*?",
+  "host": "hidden",
+  "place": "below",
+  "dy": 40
+ },
+ "retime": {
+  "pauses": [
+   {
+    "chapter": "hook",
+    "word": "Almost",
+    "add": 0.35
+   },
+   {
+    "chapter": "human",
+    "word": "Then it renders",
+    "add": 0.35
+   },
+   {
+    "chapter": "human",
+    "word": "stops",
+    "add": 0.4
+   },
+   {
+    "chapter": "human",
+    "word": "may I",
+    "add": 0.3
+   },
+   {
+    "chapter": "question",
+    "word": "Would you",
+    "add": 0.25
+   }
+  ],
+  "tail": 0.4
+ },
+ "follow_call": false,
+ "tts": {
+  "provider": "elevenlabs",
+  "voice": "River",
+  "model": "eleven_multilingual_v2",
+  "file": "voice_elevenlabs.mp3",
+  "note": "Voice of this episode only; the voice id is not stored in the repo (voices/catalog.json stays a placeholder template)."
+ }
+}

@@ -30,7 +30,7 @@ All fields are optional; an episode without them renders with the defaults.
   a blurred, enlarged copy of the same picture (image or video) fills the frame behind it.
   `chapters[].media` is copied to episode.json by `tools/build_episode.py`.
 - `"look": "<id>"` or `{"from": "<id>", ...overrides}`: colours, set, fonts and kit style, see `docs/LOOKS.md`. Resolved (format < series < episode) and embedded in episode.json as `look` by `tools/build_episode.py` or `tools/looks.py apply`.
-- `"retime": {"intro_after": "<word>", "intro_blocks": 2, "pauses": [{"chapter", "word", "add": 0.3}]}`: `tools/retime.py` moves a signature intro after the hook line and adds comic pauses, at no voice cost.
+- `"retime": {"intro_after": "<word>", "intro_blocks": 2, "pauses": [{"chapter", "word", "add": 0.3}], "tail": 1.0}` (`tail`: seconds of picture kept after the voice ends, default 1.0): `tools/retime.py` moves a signature intro after the hook line and adds comic pauses, at no voice cost.
 - `"direction": [{"chapter", "word", "emotion"?, "shot"?, "gesture"?}]`: acting of the host from that word on.
   emotion `idle|happy|wink|curious|confused|amazed|panic|deadpan|smug` · shot `bust|close|peek` · gesture `wave|point|shrug|balance`.
   A `close` holds until the next direction entry. Blocks without direction are guessed by `tools/direct.py`.
@@ -60,6 +60,8 @@ is to episode.json by `tools/build_episode.py`; types: `Opening` in `src/types.t
 - `place` (optional): `"caption"` (default, the title stands on the caption line) or `"below"` (the title hangs
   from the bottom quarter of the scene box down to the bottom safe line, so the whole scene stays visible at frame 0;
   made for `host: "hidden"`, where that band is empty).
+- `dy` (optional, with `place: "below"`): px (at 1920 high) added to the top of the title, to clear what stands
+  on the bottom of the scene.
 - `host` (optional): `"bust"` (default: the host is there, in bust framing) or `"hidden"` (the host and its set
   wait under the frame and slide in when the title leaves). Ignored without a host.
 

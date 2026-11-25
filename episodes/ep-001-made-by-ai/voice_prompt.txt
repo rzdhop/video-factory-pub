@@ -1,0 +1,7 @@
+Can an AI make this video by itself? Almost. It had to ask a person three times.
+
+It pitched three ideas; a person picked one. It wrote the script, and a second agent checked every fact. It asked again before paying for the voice. It drew every scene in code. It can't hear, so it picks sounds by their score.
+
+Then it renders, and stops. Last question: may I post it?
+
+The engine and its rulebook are open source: your AI can make yours. Would you give an AI the director's chair? The code's on GitHub, link in the bio.

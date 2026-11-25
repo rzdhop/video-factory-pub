@@ -5,9 +5,9 @@ The main session is always the orchestrator: it talks to the user (in the user's
 Three things always wait for the user: the pick of a brief, the cost of a voice (said before it is spent), and the yes before anything is scheduled or published.
 
 ## Starting empty
-A fresh copy of this repo holds the engine and the method, and none of the content: one neutral template host, one demo episode, no look, no series, placeholder settings. At session start, before any production, check what is still a placeholder:
+A fresh copy of this repo holds the engine and the method, and none of the content: one neutral template host, one demo episode, the project's own presentation episode with its look (`video-factory`, the project's brand, not the user's), no series, placeholder settings. At session start, before any production, check what is still a placeholder:
 - `brands/brands.json`: only the example brand `my-brand`, or a brand whose scheduler id or handles are empty (`null`) or `REPLACE_ME` and whose status is still `pending`;
-- `looks/`: only `_TEMPLATE.json` (no look yet);
+- `looks/`: only `_TEMPLATE.json` and the project's own `video-factory.json` (no look of the user's yet);
 - `src/layers/characters/`: only the template `Host.tsx` (no character of the user's own);
 - `voices/catalog.json`: `voice_id` is `REPLACE_ME` (status `placeholder`); `characters/voices.json` points only at such a voice;
 - `ideas/backlog.md`: only the example row; `series/`: only `_BIBLE_TEMPLATE.md`; `brands/shelves.json`: only the example shelf; `stats/`: no published video recorded.

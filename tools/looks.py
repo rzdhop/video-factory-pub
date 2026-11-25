@@ -29,7 +29,7 @@ STRICT_HEX = ("accent", "accentAlt", "bg.top", "bg.bottom", "bg.light", "bg.ligh
 RGBA_OK = ("textHud", "lineColor", "bg.gridColor", "kit.color.grid")
 FONTS = {"Anton", "Inter", "JetBrains Mono", "Bebas Neue", "Archivo Black", "DM Serif Display", "Space Grotesk"}
 TOP_KEYS = {"id", "extends", "from", "description", "bg", "accent", "accentAlt", "textPrimary", "textHud", "lineColor",
-            "fontKinetic", "fontHud", "fontMono", "caption", "hud", "camera", "kit", "sceneBox", "host", "hostless", "layouts", "style", "styleHost"}
+            "fontKinetic", "fontHud", "fontMono", "caption", "hud", "camera", "kit", "sceneBox", "host", "hostless", "layouts", "style", "styleHost", "character"}
 
 
 def merge(base, over):

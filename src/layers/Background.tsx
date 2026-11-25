@@ -15,6 +15,12 @@ export type BackgroundProps = {
   camX?: number; camY?: number;
 };
 
+/** Soft drop shadow under a layer; a look scales it with `bg.shadow` (default 1, 0 = no shadow and no filter). */
+export const softDrop = (preset: Preset, dy: number, blur: number, a: number): string | undefined => {
+  const s = preset.bg.shadow ?? 1;
+  if (s <= 0) return undefined;
+  return `drop-shadow(0 ${dy}px ${blur}px rgba(0,0,0,${s === 1 ? a : +(a * s).toFixed(3)}))`;
+};
 
 /** Full-frame background built as a small set in depth:
  *  gradient wall -> two drifting coloured lights -> stage spotlight on the scene -> floor line with a glow
@@ -29,15 +35,18 @@ export const Background: React.FC<BackgroundProps> = ({ preset, t, width, height
   const seed = Math.floor(t * 10) % 1000;
   const nDust = bg.dust ?? 34;
   const pulse = 1 + beat * 0.18;
+  // a look can turn the drifting lights and the close-up rays down or off (1 = the default set)
+  const lights = bg.lights ?? 1, rays = bg.burst ?? 1;
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, ${bg.top} 0%, ${bg.bottom} 100%)` }} />
       {/* two coloured lights drifting slowly: the wall is never flat */}
+      {lights > 0 && (<>
       <div
         style={{
           position: "absolute", inset: -200,
           background: `radial-gradient(circle at ${30 + wobble(t * 0.25, 1) * 14}% ${28 + wobble(t * 0.2, 2) * 8}%, ${light} 0%, rgba(0,0,0,0) 38%)`,
-          opacity: 0.34 * pulse * (1 - focus * 0.5),
+          opacity: 0.34 * pulse * (1 - focus * 0.5) * lights,
           transform: `translate(${-camX * 1.5}px, ${-camY * 1.5}px)`,
         }}
       />
@@ -45,10 +54,11 @@ export const Background: React.FC<BackgroundProps> = ({ preset, t, width, height
         style={{
           position: "absolute", inset: -200,
           background: `radial-gradient(circle at ${74 + wobble(t * 0.22, 3) * 12}% ${52 + wobble(t * 0.18, 4) * 10}%, ${light2} 0%, rgba(0,0,0,0) 32%)`,
-          opacity: 0.16 * pulse * (1 - focus * 0.5),
+          opacity: 0.16 * pulse * (1 - focus * 0.5) * lights,
           transform: `translate(${-camX * 2}px, ${-camY * 2}px)`,
         }}
       />
+      </>)}
       {/* stage spotlight on the scene area (lifts the drawings off the wall) */}
       <div
         style={{
@@ -95,12 +105,12 @@ export const Background: React.FC<BackgroundProps> = ({ preset, t, width, height
         </svg>
       )}
       {/* close-up: rays burst out from behind the face, slowly turning; colour and direction change with each close-up */}
-      {focus > 0.02 && (
+      {focus > 0.02 && rays > 0 && (
         <div
           style={{
             position: "absolute", inset: -400,
             background: `repeating-conic-gradient(from ${t * (burst % 4 < 2 ? 14 : -14) + burst * 37}deg at 50% 42%, ${Math.floor(burst / 2) % 2 ? light2 : preset.accent} 0deg 5deg, rgba(0,0,0,0) 5deg 15deg)`,
-            opacity: focus * 0.13,
+            opacity: focus * 0.13 * rays,
             maskImage: "radial-gradient(circle at 50% 42%, rgba(0,0,0,0) 12%, #000 55%)",
             WebkitMaskImage: "radial-gradient(circle at 50% 42%, rgba(0,0,0,0) 12%, #000 55%)",
           }}

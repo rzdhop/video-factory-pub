@@ -11,7 +11,31 @@
     "light": "#3D7BFF",
     "light2": "#22D3A6",
     "dust": 24,
-    "spot": 1.0
+    "spot": 1.0,
+    "_strengths": "Optional, each 1 by default and 0 = off: lights (the two drifting lights), burst (rays behind a close-up), shadow (soft drop shadows under the scene and the host). Delete the three lines to keep the default set.",
+    "lights": 1,
+    "burst": 1,
+    "shadow": 1
+  },
+
+  "_caption": "Optional strengths, each 1 by default and 0 = off: bloom (accent colour behind the caption on an accented word), glow (glow around the accent word, captions and opening title), softShadow (blurred shadow under the text outline), titlePad (soft dark pad behind the opening title), titleBar (accent bar under the word being said in the opening title). A flat, printed look sets all of them to 0 (docs/LOOKS.md, 'A flat look').",
+  "caption": {
+    "bloom": 1,
+    "glow": 1,
+    "softShadow": 1,
+    "titlePad": 1,
+    "titleBar": 1
+  },
+
+  "_camera": "Optional. hitFlash: strength of the white flash over the frame on a punchline hit (1 by default, 0 = off).",
+  "camera": {
+    "hitFlash": 1
+  },
+
+  "_character": "Optional, delete the block to keep the host as drawn. top: colour of the host's top instead of the accent (keeps the accent for the subject of the scene). flat: 0..1, how much of the host's shading goes (1 = flat fills).",
+  "character": {
+    "top": "#3A3F5C",
+    "flat": 0
   },
 
   "_accent": "accent: THE colour of the look (accent word of the captions, progress bar, the object the video is about). accentAlt: the second colour (danger, contrast).",

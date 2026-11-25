@@ -3,7 +3,7 @@
 A **format** says how an episode is written and structured. A **look** says what it looks like. They are independent:
 two series of the same format can have two looks, and one look can serve several formats.
 
-No look ships with the repo: `looks/` holds only `_TEMPLATE.json`. An episode without a look renders with the base
+One look ships with the repo, as a worked example: `looks/video-factory.json`, the project's own flat poster look, used by the presentation episode `ep-001-made-by-ai`. It is the project's brand: build your own from `looks/_TEMPLATE.json`. An episode without a look renders with the base
 preset (`presets/`), which is the engine default and nobody's identity. The first look is built with the user.
 
 A look is one JSON file, `looks/<id>.json`: a partial preset laid over a base preset (`extends`, default `dark-2d`).
@@ -14,6 +14,10 @@ Only what differs is written. No code change, no registration: `tools/looks.py` 
 | `bg.top`, `bg.bottom` | wall gradient (keep dark or mid-tone: light backgrounds are not supported yet) |
 | `bg.light`, `bg.light2` | the two drifting coloured lights, floor glow, close-up rays |
 | `bg.grid`, `bg.gridColor`, `bg.dust`, `bg.grain`, `bg.floor`, `bg.spot`, `bg.vignette` | set dressing: grid, dust count, film grain, floor line on/off, spotlight and vignette strength |
+| `bg.lights`, `bg.burst`, `bg.shadow` | strengths, default 1, 0 = off: the two drifting lights; the rays behind the face in a close-up; the soft drop shadows under the scene and the host (0 also removes the filter, which renders faster) |
+| `caption.bloom`, `caption.glow`, `caption.softShadow`, `caption.titlePad` | strengths, default 1, 0 = off: the accent colour blooming behind the caption on an accented word; the glow around the accent word (captions and opening title); the blurred shadow under the outline of captions and title (0 keeps the hard outline only); the soft dark pad behind the opening title |
+| `caption.titleBar`, `camera.hitFlash` | strengths, default 1, 0 = off: the accent bar that runs under the word being said in the opening title (a cover frame without it); the white flash over the whole frame on a punchline hit |
+| `character.top`, `character.flat` | the host: `top` = colour of its top instead of the accent of the look (so the accent stays on the subject of the scene); `flat` 0..1 = how much of its shading goes (1 = flat fills on head, top and hands). A character reads them through its `look` prop (`src/layers/characters/Host.tsx`); a character that ignores the prop keeps its own drawing |
 | `accent`, `accentAlt`, `textPrimary`, `textHud`, `lineColor` | accent word of the captions, HUD, lines |
 | `fontKinetic`, `fontHud`, `fontMono` | caption/title font, HUD font, code font. Installed: Anton, Bebas Neue, Archivo Black, DM Serif Display, Inter, Space Grotesk, JetBrains Mono. Another font = one `@fontsource` import in `src/Root.tsx` + its name in `FONTS` (tools/looks.py) and `DISPLAY_WIDTH` (src/kit/tokens.ts) |
 | `caption.*`, `hud.*`, `camera.zoom` | caption size and position, HUD sizes, camera push |
@@ -52,6 +56,19 @@ One look per saga: two sagas of the same format can look completely different, t
 Follows: the set, lights, captions, HUD, every kit part, and any scene written with tokens (`const tk = kit(preset)`).
 Does not follow: a scene whose colours are written as literals in the drawing, and the characters' own colours (skin, clothes).
 Rule for new scenes: no colour, stroke width or radius written as a literal; take them from `tk` or `preset`. Episode-specific colours of a subject (a planet, an animal) are fine.
+
+## A flat look (no light, no glow)
+The base set is lit: drifting lights, spotlight, dust, soft shadows, a glow on the accent word. A look that wants a
+flat, printed picture switches each of them off by data, without a style:
+```json
+"bg": {"top": "#16141F", "bottom": "#16141F", "lights": 0, "burst": 0, "shadow": 0, "dust": 0, "grain": 0, "spot": 0, "vignette": 0, "floor": false},
+"caption": {"bloom": 0, "glow": 0, "softShadow": 0, "titlePad": 0, "titleBar": 0},
+"camera": {"hitFlash": 0},
+"character": {"top": "#3A3745", "flat": 1}
+```
+Every one of these keys is a strength: a value between 0 and 1 softens instead of removing. Without them an
+episode renders exactly as before. With `titlePad: 0` and `softShadow: 0` the title and the captions rely on their
+hard outline alone: check them on the stills over the brightest scene.
 
 ## A look is not a style
 A look recolours and re-dresses the same drawing. When the user wants a picture that is BUILT differently (another

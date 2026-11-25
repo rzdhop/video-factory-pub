@@ -2,7 +2,7 @@
 
 Do this once per machine or per fresh session. The skill (`SKILL.md`) is the method; the engine is a separate repo that you clone and then fill with your own settings.
 
-Replace `<REPO_URL>` below with the address of the video-factory engine repo (the public repo this skill is published with, or your fork of it).
+The engine repo is https://github.com/rzdhop/video-factory-pub (use the address of your fork if you have one).
 
 ## 1. What you need
 
@@ -25,7 +25,7 @@ A video can be produced with none of the optional rows: you then post the file y
 ## 2. Install the engine
 
 ```bash
-git clone <REPO_URL> ~/video-factory
+git clone https://github.com/rzdhop/video-factory-pub.git ~/video-factory
 cd ~/video-factory
 npm install
 pip install numpy librosa soundfile        # add --break-system-packages where your system asks for it

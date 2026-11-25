@@ -3,6 +3,7 @@ import type { MediaItem, Preset, WordBlock } from "../types";
 // episode scenes: generated registry (tools/gen_scenes.py), never edited by hand
 import { EP_SCENES, EP_CAMERA, type SceneCamera } from "./scenes";
 import { Media } from "./scenes/Media";
+import { softDrop } from "./Background";
 import type { Box } from "./scenes/types";
 
 /** Camera of a scene that has no entry in a *_CAMERA export: centred, no punch. */
@@ -51,7 +52,7 @@ export const Scene: React.FC<Props> = ({ preset, scene, t, p, width, height, wor
     const shakeX = Math.sin(t * 70) * 7 * punch;
     const shakeY = Math.cos(t * 63) * 5 * punch;
     return (
-      <svg width={width} height={height} style={{ position: "absolute", inset: 0, opacity: Math.min(1, t / 0.08), filter: "drop-shadow(0 16px 22px rgba(0,0,0,0.45))" }}>
+      <svg width={width} height={height} style={{ position: "absolute", inset: 0, opacity: Math.min(1, t / 0.08), filter: softDrop(preset, 16, 22, 0.45) }}>
         <defs>
           <linearGradient id="scene-fade" x1="0" y1="0" x2="0" y2={height} gradientUnits="userSpaceOnUse">
             <stop offset={(box.y + h - 120) / height} stopColor="#fff" stopOpacity={1} />

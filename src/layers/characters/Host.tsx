@@ -32,6 +32,9 @@ export type HostProps = {
   mouth?: { open: number; wide: number } | null;
   /** hands: kind + presence 0..1 */
   gesture?: { kind: GestureKind; k: number };
+  /** set by a look (`character` of the preset): `top` = colour of the tee instead of the accent, `flat` 0..1 =
+   *  how much of the shading goes (1 = flat fills on the head, the tee and the hands). Missing = today's drawing. */
+  look?: { top?: string; flat?: number };
 };
 
 /** Where the eye line and the chin sit below the head centre, in the drawing's own px. The framings of
@@ -68,10 +71,16 @@ const MOUTH_IN = "#2A1E2A";
 const TONGUE = "#D9707C";
 
 /** deterministic pseudo-random */
+/** Mix two #RRGGBB colours: k = 0 gives a, k = 1 gives b. */
+const mix = (a: string, b: string, k: number) => {
+  if (k <= 0) return a;
+  const p = (h: string, i: number) => parseInt(h.slice(1 + i * 2, 3 + i * 2), 16);
+  return "#" + [0, 1, 2].map((i) => Math.round(p(a, i) + (p(b, i) - p(a, i)) * Math.min(1, k)).toString(16).padStart(2, "0")).join("");
+};
 const rnd = (i: number, salt = 0) => { const s = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453; return s - Math.floor(s); };
 
 /** Mitten hand around its palm centre: a round palm, a thumb, and one raised finger when pointing. */
-const Hand: React.FC<{ x: number; y: number; rot?: number; pointing?: boolean; mirror?: boolean }> = ({ x, y, rot = 0, pointing = false, mirror = false }) => (
+const Hand: React.FC<{ x: number; y: number; rot?: number; pointing?: boolean; mirror?: boolean; shine?: number }> = ({ x, y, rot = 0, pointing = false, mirror = false, shine = 1 }) => (
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${mirror ? -1 : 1} 1)`}>
     {pointing ? (
       <g>
@@ -82,13 +91,20 @@ const Hand: React.FC<{ x: number; y: number; rot?: number; pointing?: boolean; m
       <rect x={-40} y={-70} width={80} height={108} rx={38} fill={BODY} />
     )}
     <rect x={-58} y={-22} width={26} height={50} rx={13} fill={BODY} transform="rotate(-28)" />
-    <ellipse cx={2} cy={8} rx={22} ry={18} fill={BODY_LIGHT} opacity={0.5} />
+    {shine > 0 && <ellipse cx={2} cy={8} rx={22} ry={18} fill={BODY_LIGHT} opacity={0.5 * shine} />}
   </g>
 );
 
-export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, speaking, accentHit, accent, squash, wave = 0, prevEmotion, emoK = 1, mouth = null, gesture }) => {
+export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, speaking, accentHit, accent, squash, wave = 0, prevEmotion, emoK = 1, mouth = null, gesture, look: lk }) => {
   const rx = 150, ry = HOST_GEOMETRY.chinDy; // head
-  const tee = shade(accent, -0.18), teeDark = shade(accent, -0.5), teeLight = shade(accent, 0.25);
+  // ids of the eye clips, unique per host on the page (a model sheet draws several)
+  const eyeId = "host-eye-" + React.useId().replace(/[^a-zA-Z0-9]/g, "");
+  // look: another colour for the tee, and flat fills instead of the shading (defaults: the accent tee, shaded)
+  const flatK = Math.min(1, Math.max(0, lk?.flat ?? 0)), shine = 1 - flatK;
+  const teeBase = lk?.top ?? accent, teeAmt = lk?.top ? 0 : -0.18;
+  const tee = shade(teeBase, teeAmt), teeDark = shade(teeBase, teeAmt - 0.32 * shine), teeLight = shade(teeBase, 0.25);
+  // the collar keeps a darker line even when the tee is flat
+  const collar = flatK > 0 ? shade(teeBase, teeAmt - 0.32 * shine - 0.22 * flatK) : teeDark;
   const e = blendFace(FACES[prevEmotion ?? emotion], FACES[emotion], emoK);
   // voice: jaw opening and lip shape come from the real audio when it is provided
   const jaw = mouth ? mouth.open : speaking ? 0.25 + Math.abs(Math.sin(t * 18)) * 0.75 : 0;
@@ -129,11 +145,13 @@ export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, sp
 
   const Eye = ({ x, scaleY }: { x: number; scaleY: number }) => (
     <g transform={`translate(${x + turn} ${eyeY}) scale(1 ${scaleY})`}>
+      {/* the lid is clipped to the eye: its corners never stick out of the round */}
+      <clipPath id={`${eyeId}-${x < cx ? "l" : "r"}`}><circle r={eyeR} /></clipPath>
       <circle r={eyeR} fill={EYE_WHITE} />
       <circle cx={look * 0.55} cy={2} r={13 - e.wide * 2} fill={INK} />
       <circle cx={look * 0.55 + 5} cy={-3} r={4} fill={EYE_WHITE} />
       {/* upper lid: a cap of the head colour that comes down over the eye */}
-      {lidK > 0.02 && <path d={`M ${-eyeR - 2} ${-eyeR - 2} H ${eyeR + 2} V ${-eyeR + eyeR * 2 * lidK} Q 0 ${-eyeR + eyeR * 2 * lidK + 10} ${-eyeR - 2} ${-eyeR + eyeR * 2 * lidK} Z`} fill={BODY} />}
+      {lidK > 0.02 && <path clipPath={`url(#${eyeId}-${x < cx ? "l" : "r"})`} d={`M ${-eyeR - 2} ${-eyeR - 2} H ${eyeR + 2} V ${-eyeR + eyeR * 2 * lidK} Q 0 ${-eyeR + eyeR * 2 * lidK + 10} ${-eyeR - 2} ${-eyeR + eyeR * 2 * lidK} Z`} fill={BODY} />}
       <circle r={eyeR} fill="none" stroke={BODY_DARK} strokeWidth={4} />
     </g>
   );
@@ -142,9 +160,9 @@ export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, sp
     <g transform={`translate(${cx} ${height}) scale(1 ${squash}) translate(${-cx} ${-height}) rotate(${tilt} ${cx} ${cy})`}>
       <defs>
         <radialGradient id="host-head" cx="40%" cy="32%" r="78%">
-          <stop offset="0%" stopColor={BODY_LIGHT} />
+          <stop offset="0%" stopColor={mix(BODY_LIGHT, BODY, flatK)} />
           <stop offset="62%" stopColor={BODY} />
-          <stop offset="100%" stopColor={BODY_DARK} />
+          <stop offset="100%" stopColor={mix(BODY_DARK, BODY, flatK)} />
         </radialGradient>
         <linearGradient id="host-tee" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor={tee} />
@@ -159,10 +177,10 @@ export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, sp
         fill="url(#host-tee)"
       />
       {/* rim light on the shoulder (comes from the scene side) */}
-      <path d={`M ${cx} ${cy + 236} C ${cx + 150} ${cy + 228 - sh}, ${cx + 262} ${cy + 268 - sh}, ${cx + 285} ${height + 40}`} stroke={teeLight} strokeWidth={6} fill="none" opacity={0.55} strokeLinecap="round" strokeDasharray="0 110 190 9000" />
+      <path d={`M ${cx} ${cy + 236} C ${cx + 150} ${cy + 228 - sh}, ${cx + 262} ${cy + 268 - sh}, ${cx + 285} ${height + 40}`} stroke={teeLight} strokeWidth={6} fill="none" opacity={0.55 * shine} strokeLinecap="round" strokeDasharray="0 110 190 9000" />
       {/* neck, then the round collar of the tee over it */}
       <rect x={cx - 46} y={cy + ry - 40} width={92} height={110} rx={30} fill={BODY_DARK} />
-      <path d={`M ${cx - 84} ${cy + 232} Q ${cx} ${cy + 296} ${cx + 84} ${cy + 232}`} stroke={teeDark} strokeWidth={16} fill="none" strokeLinecap="round" />
+      <path d={`M ${cx - 84} ${cy + 232} Q ${cx} ${cy + 296} ${cx + 84} ${cy + 232}`} stroke={collar} strokeWidth={16} fill="none" strokeLinecap="round" />
 
       {/* ears */}
       <ellipse cx={cx - rx + 4 + turn * 0.2} cy={cy + 14} rx={20} ry={32} fill={BODY_DARK} />
@@ -208,21 +226,21 @@ export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, sp
       {waveK > 0.01 && (
         <g opacity={Math.min(1, waveK * 2)}>
           <path d={`M ${cx + 215} ${cy + 340} Q ${cx + 290} ${cy + 260 - waveK * 120} ${cx + 250} ${cy + 250 - waveK * 250}`} stroke={BODY_DARK} strokeWidth={ARM} fill="none" strokeLinecap="round" />
-          <Hand x={cx + 250} y={cy + 230 - waveK * 260} rot={Math.sin(t * 9) * 18 * waveK} />
+          <Hand shine={shine} x={cx + 250} y={cy + 230 - waveK * 260} rot={Math.sin(t * 9) * 18 * waveK} />
         </g>
       )}
       {/* pointing at the scene */}
       {gKind === "point" && gK > 0.01 && (
         <g opacity={Math.min(1, gK * 2)}>
           <path d={`M ${cx + 215} ${cy + 340} Q ${cx + 300} ${cy + 250} ${cx + 262} ${cy + 80 + (1 - gK) * 280}`} stroke={BODY_DARK} strokeWidth={ARM} fill="none" strokeLinecap="round" />
-          <Hand x={cx + 258} y={cy + 40 + (1 - gK) * 300 + Math.sin(t * 10) * 5} rot={22} pointing />
+          <Hand shine={shine} x={cx + 258} y={cy + 40 + (1 - gK) * 300 + Math.sin(t * 10) * 5} rot={22} pointing />
         </g>
       )}
       {/* shrug: both palms up, shoulders raised */}
       {shrugK > 0.01 && [-1, 1].map((sgn) => (
         <g key={sgn} opacity={Math.min(1, shrugK * 2)}>
           <path d={`M ${cx + sgn * 215} ${cy + 340} Q ${cx + sgn * 320} ${cy + 330} ${cx + sgn * 300} ${cy + 250 + (1 - shrugK) * 240}`} stroke={BODY_DARK} strokeWidth={ARM} fill="none" strokeLinecap="round" />
-          <Hand x={cx + sgn * 300} y={cy + 215 + (1 - shrugK) * 260} rot={sgn * 62} mirror={sgn > 0} />
+          <Hand shine={shine} x={cx + sgn * 300} y={cy + 215 + (1 - shrugK) * 260} rot={sgn * 62} mirror={sgn > 0} />
         </g>
       ))}
       {/* balance: two palms weighing up and down in turn */}
@@ -231,7 +249,7 @@ export const Host: React.FC<HostProps> = ({ cx, cy: cyIn, height, t, emotion, sp
         return (
           <g key={sgn} opacity={Math.min(1, gK * 2)}>
             <path d={`M ${cx + sgn * 215} ${cy + 350} Q ${cx + sgn * 300} ${cy + 330} ${cx + sgn * 240} ${yy + 40}`} stroke={BODY_DARK} strokeWidth={ARM} fill="none" strokeLinecap="round" />
-            <Hand x={cx + sgn * 240} y={yy} rot={sgn * 10} mirror={sgn > 0} />
+            <Hand shine={shine} x={cx + sgn * 240} y={yy} rot={sgn * 10} mirror={sgn > 0} />
           </g>
         );
       })}

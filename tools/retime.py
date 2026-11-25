@@ -7,7 +7,8 @@ Reads plan.json "retime":
     "intro_blocks": 2,           # how many leading blocks form the greeting (default 2: "Hello," + "it's <name>.")
     "pauses": [                  # comic pauses: silence inserted right before a block
       {"chapter": "<chapter key>", "word": "<word>", "add": 0.35}
-    ]
+    ],
+    "tail": 1.0                  # seconds of picture kept after the voice ends (default 1.0)
   }
 Rewrites voice.wav + episode.json (words, chapters, duration) and marks the result:
   "retimed": true, "retime_applied": {"intro_after", "intro_blocks", "pauses", "source"}
@@ -166,7 +167,8 @@ def main():
     for a, b in zip(timing, timing[1:]):
         a["t_end"] = b["t_start"]
     dur = len(voice) / sr
-    timing[-1]["t_end"] = round(dur + 0.4, 3)
+    tail = float(cfg.get("tail", 1.0))  # seconds of picture after the voice file ends (plan.json retime.tail)
+    timing[-1]["t_end"] = round(dur + min(0.4, tail), 3)
 
     # ---- 4. everything else: from the CURRENT episode.json (keys keep their place in the file)
     chapters = []
@@ -177,7 +179,7 @@ def main():
                 chap.setdefault(k, v)
         chap.update(t)
         chapters.append(chap)
-    computed = {"words": words, "chapters": chapters, "duration": round(dur + 1.0, 3)}
+    computed = {"words": words, "chapters": chapters, "duration": round(dur + tail, 3)}
     result = {}
     for k, v in cur.items():
         if k in STALE or k in MARKS:

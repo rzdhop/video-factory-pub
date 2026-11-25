@@ -15,5 +15,22 @@
   "instagram_id": "",
   "tiktok_url": "",
   "tiktok_id": ""
+ },
+ {
+  "episode": "ep-001-made-by-ai",
+  "title": "Can an AI make this video by itself?",
+  "character": "host",
+  "format": "humour-express",
+  "lang": "en",
+  "series": "",
+  "part": null,
+  "brand": "my-brand",
+  "length_s": 29.0,
+  "opening": "hook card",
+  "hook": "CAN AN AI MAKE THIS VIDEO BY ITSELF?",
+  "instagram_url": "",
+  "instagram_id": "",
+  "tiktok_url": "",
+  "tiktok_id": ""
  }
 ]

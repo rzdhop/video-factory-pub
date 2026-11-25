@@ -3,7 +3,7 @@ import { styleOf } from "../styles";
 import { continueRender, delayRender } from "remotion";
 import type { Episode, Preset, WordBlock } from "../types";
 import { clamp01, easeOut, impulse } from "../motion";
-import { outline, vowels } from "./Captions";
+import { accentGlow, outline, vowels } from "./Captions";
 
 /** Hook-first opening (episode.json `opening`, docs/ENGINE_CONTRACT.md): the whole hook sentence is on screen and
  *  readable at frame 0 as a giant caption, the scene is complete and bright behind it, and the word-by-word
@@ -110,6 +110,8 @@ type Props = {
   /** "below": the title sits under the scene box (from its bottom quarter, which captions cover anyway, down to the
    *  bottom safe line), so the whole scene stays visible at frame 0. Default "caption": where the captions sit. */
   place?: "caption" | "below";
+  /** px (at 1920 high) added to the top of a "below" title */
+  dy?: number;
 };
 
 /** The giant caption of the opening. Whole and readable at frame 0 (no fade, no word-by-word): only a scale settle.
@@ -117,7 +119,7 @@ type Props = {
  *  It sits where the captions sit and grows away from them, between the HUD and the bottom safe zone, and always
  *  inside the central 3:4 crop of the frame (12.5 % to 87.5 % of the height) that a profile grid shows.
  *  A small accent bar runs under the word being said, so the title stays in sync with the voice. */
-export const OpeningCard: React.FC<Props> = ({ preset, title, words, span, t, width, height, hudBottom, place = "caption" }) => {
+export const OpeningCard: React.FC<Props> = ({ preset, title, words, span, t, width, height, hudBottom, place = "caption", dy = 0 }) => {
   const parsed = parseTitle(title);
   const font = preset.fontKinetic;
   // a drawing style (src/styles) may restyle the title: weight, shadows, accent colour, no lean
@@ -158,7 +160,7 @@ export const OpeningCard: React.FC<Props> = ({ preset, title, words, span, t, wi
   const anchor = cap.anchor === "bottom" ? height * (cap.y - 0.01) : growsDown ? height * cap.y : height * cap.y + oneLine;
   const below = place === "below" && preset.sceneBox;
   const boxQuarter = below ? height * (preset.sceneBox.top + 0.75 * (preset.sceneBox.bottom - preset.sceneBox.top)) : 0;
-  const y0 = below ? Math.max(top, boxQuarter) : growsDown ? Math.max(top, anchor) : top;
+  const y0 = below ? Math.max(top, boxQuarter) + dy * (height / 1920) : growsDown ? Math.max(top, anchor) : top;
   const y1 = below ? floor : growsDown ? floor : Math.max(top + 200, Math.min(floor, anchor));
   const fromTop = growsDown || !!below; // the block hangs from y0 instead of standing on y1
 
@@ -196,7 +198,7 @@ export const OpeningCard: React.FC<Props> = ({ preset, title, words, span, t, wi
         style={{
           position: "absolute", left: 0, right: 0, top: bandTop - 90, height: blockH + 180,
           background: "radial-gradient(ellipse 62% 50% at 50% 50%, rgba(8,8,14,0.62) 0%, rgba(8,8,14,0.5) 55%, rgba(8,8,14,0) 100%)",
-          opacity: 1 - out, pointerEvents: "none",
+          opacity: (1 - out) * (preset.caption.titlePad ?? 1), pointerEvents: "none",
         }}
       />
       <div
@@ -205,7 +207,7 @@ export const OpeningCard: React.FC<Props> = ({ preset, title, words, span, t, wi
           display: "flex", flexDirection: "column", alignItems: "center", pointerEvents: "none",
           fontFamily: font, textTransform: "uppercase", color: preset.textPrimary, letterSpacing: `${TRACK_EM}em`,
           fontWeight: weight,
-          textShadow: ts?.shadow ? ts.shadow(preset, false) : outline(OUT, "#0B0B10"),
+          textShadow: ts?.shadow ? ts.shadow(preset, false) : outline(OUT, "#0B0B10", preset.caption.softShadow ?? 1),
           transform: flat ? `scale(${1 - 0.04 * q})` : `translateY(${-q * 70}px) rotate(-1.2deg) scale(${settle * (1 - 0.35 * q)})`,
           transformOrigin: fromTop ? "50% 0%" : "50% 100%",
           opacity: 1 - q,
@@ -224,16 +226,16 @@ export const OpeningCard: React.FC<Props> = ({ preset, title, words, span, t, wi
                   style={{
                     position: "relative", display: "inline-block",
                     color: w.accent ? (ts?.accentColor ? ts.accentColor(preset) : preset.accent) : undefined,
-                    textShadow: w.accent ? (ts?.shadow ? ts.shadow(preset, true) : `${outline(OUT, "#0B0B10")}, 0 0 40px ${preset.accent}AA`) : undefined,
+                    textShadow: w.accent ? (ts?.shadow ? ts.shadow(preset, true) : `${outline(OUT, "#0B0B10", preset.caption.softShadow ?? 1)}${accentGlow(preset, 40)}`) : undefined,
                     transform: `scale(${1 + Math.max(0, kick) * 0.05})`,
                   }}
                 >
                   {w.text}
-                  {active && !flat && (
+                  {active && !flat && (preset.caption.titleBar ?? 1) > 0 && (
                     <span
                       style={{
                         position: "absolute", left: "4%", right: "4%", bottom: "0.02em", height: Math.max(6, sizes[li] * 0.05),
-                        borderRadius: 4, background: w.accent ? preset.textPrimary : preset.accent,
+                        borderRadius: 4, background: w.accent ? preset.textPrimary : preset.accent, opacity: preset.caption.titleBar ?? 1,
                         boxShadow: "0 0 0 4px #0B0B10",
                       }}
                     />

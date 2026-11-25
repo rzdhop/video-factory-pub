@@ -5,6 +5,10 @@ import { EP000_HOOK_SCENES, EP000_HOOK_CAMERA } from "./Ep000_hook";
 import { EP000_PREUVE_SCENES, EP000_PREUVE_CAMERA } from "./Ep000_preuve";
 import { EP000_QUESTION_SCENES, EP000_QUESTION_CAMERA } from "./Ep000_question";
 import { EP000_TWIST_SCENES, EP000_TWIST_CAMERA } from "./Ep000_twist";
+import { EP001_HOOK_SCENES, EP001_HOOK_CAMERA } from "./Ep001_hook";
+import { EP001_HUMAN_SCENES, EP001_HUMAN_CAMERA } from "./Ep001_human";
+import { EP001_LINE_SCENES, EP001_LINE_CAMERA } from "./Ep001_line";
+import { EP001_QUESTION_SCENES, EP001_QUESTION_CAMERA } from "./Ep001_question";
 
 /** Camera of a scene: focus point (fractions of the scene box) and the words it punches on. */
 export type SceneCamera = { focus: [number, number]; beats: string[] };
@@ -15,6 +19,10 @@ export const EP_SCENES = {
   ...EP000_PREUVE_SCENES,
   ...EP000_QUESTION_SCENES,
   ...EP000_TWIST_SCENES,
+  ...EP001_HOOK_SCENES,
+  ...EP001_HUMAN_SCENES,
+  ...EP001_LINE_SCENES,
+  ...EP001_QUESTION_SCENES,
 } as Record<string, React.FC<any>>;
 
 export const EP_CAMERA: Record<string, SceneCamera> = {
@@ -22,6 +30,10 @@ export const EP_CAMERA: Record<string, SceneCamera> = {
   ...EP000_PREUVE_CAMERA,
   ...EP000_QUESTION_CAMERA,
   ...EP000_TWIST_CAMERA,
+  ...EP001_HOOK_CAMERA,
+  ...EP001_HUMAN_CAMERA,
+  ...EP001_LINE_CAMERA,
+  ...EP001_QUESTION_CAMERA,
 };
 
 /** Scene names, read by tools/lint_plan.py. */
@@ -30,4 +42,8 @@ export const SCENE_NAMES: string[] = [
   "ep000-preuve",
   "ep000-question",
   "ep000-twist",
+  "ep001-hook",
+  "ep001-human",
+  "ep001-line",
+  "ep001-question",
 ];

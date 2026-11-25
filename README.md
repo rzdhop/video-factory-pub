@@ -1,7 +1,15 @@
+<p align="center"><img src="docs/brand/banner.png" alt="video-factory: an open engine and rulebook for AI-made short videos" width="100%"></p>
+
 # video-factory
 
+<img src="docs/media/presentation.gif" alt="The presentation video, made with this engine" width="240" align="right">
+
 An engine that renders vertical explainer videos (9:16) from a script, entirely in code (Remotion, React, Python, ffmpeg), and a working method for making them with Claude: phases, gates, checks and agents.
-It ships empty of content: one template host, one demo episode, no look, no series. The videos made with it are yours.
+It ships almost empty of content: one template host, one demo episode, and the project's own presentation video with its look. The videos made with it are yours.
+
+**The presentation video** on the right was made with this repo, from the brief to the render: [watch it with sound](docs/media/presentation.mp4) (29 s). Its sources are in `episodes/ep-001-made-by-ai/` (script, fact check, critique, stills review, plan) and `src/layers/scenes/Ep001_*.tsx`; its look is `looks/video-factory.json`. A person picked the idea, agreed to the voice cost and said yes before it was posted; the rest was done by the AI and its agents. Voice: ElevenLabs, voice "River". Sound: "Slate Board.wav" by 190175, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+
+<br clear="right">
 
 ## Requirements
 - Node 22 and npm
@@ -12,7 +20,7 @@ It ships empty of content: one template host, one demo episode, no look, no seri
 
 ## Install
 ```bash
-git clone <REPO_URL> video-factory && cd video-factory
+git clone https://github.com/rzdhop/video-factory-pub.git video-factory && cd video-factory
 npm install
 pip install numpy librosa soundfile
 # Debian / Ubuntu: sudo apt-get install espeak-ng ffmpeg
@@ -92,4 +100,6 @@ Ask for a video in one sentence. Claude answers with three briefs, you pick one,
 - Nothing guarantees views. `docs/RETENTION.md` removes known reasons a stranger swipes away, and `tools/stats.py` measures whether it works for you.
 
 ## Licence
-MIT, see `LICENSE`. The fonts and the sounds keep their own licences.
+MIT for the code and the method of this repo, see `LICENSE`. The fonts and the sounds keep their own licences. The renderer, Remotion, is a dependency with its own licence: free for individuals and small teams, a company licence above that. Read `node_modules/remotion/LICENSE.md` or remotion.dev before commercial use.
+
+The logo and banner are in `docs/brand/` and are covered by the same MIT licence.

@@ -1,0 +1,73 @@
+{
+  "id": "video-factory",
+  "extends": "dark-2d",
+  "description": "The project's own brand: a printed poster. Flat ink ground, paper shapes, one vermilion accent on the single focus of each frame. For the presentation videos of video-factory.",
+  "_bg": "Flat ink ground: top = bottom (no gradient). Lights, close-up rays, soft shadows, dust, grain, spotlight, vignette, floor and grid are all off. light / light2 only feed derived colours: they stay on the ground colour so nothing coloured can leak.",
+  "bg": {
+    "top": "#16141F",
+    "bottom": "#16141F",
+    "light": "#16141F",
+    "light2": "#16141F",
+    "dust": 0,
+    "grain": 0,
+    "spot": 0,
+    "vignette": 0,
+    "floor": false,
+    "grid": false,
+    "lights": 0,
+    "burst": 0,
+    "shadow": 0
+  },
+  "_accent": "ONE accent, vermilion, on one focus per frame. accentAlt is a neutral warm grey on purpose: this look has no second colour.",
+  "accent": "#FF5A36",
+  "accentAlt": "#A39E93",
+  "textPrimary": "#F4F1EA",
+  "textHud": "rgba(244,241,234,0.9)",
+  "lineColor": "#F4F1EA",
+  "_caption": "No bloom, no glow, no blurred shadow, no dark pad, no karaoke bar under the title: captions and title stand on their hard ink outline. closeY / closeBand: in a close-up the caption sits on the flat top of the host, under the collar, without the soft band.",
+  "caption": {
+    "bloom": 0,
+    "glow": 0,
+    "softShadow": 0,
+    "titlePad": 0,
+    "titleBar": 0,
+    "closeY": 0.775,
+    "closeBand": 0
+  },
+  "_camera": "hitFlash 0: no white flash over the frame on a punchline (the ground stays the ink).",
+  "camera": {
+    "hitFlash": 0
+  },
+  "_character": "The host wears a flat mid-ink top (a tint of the ground), so the vermilion stays the one accent of the frame; flat 1 removes the shading of the head, the top and the hands.",
+  "character": {
+    "top": "#3A3745",
+    "flat": 1
+  },
+  "_fonts": "Space Grotesk for every label; the caption and title font of the engine (Anton) stays.",
+  "fontKinetic": "Anton",
+  "fontHud": "Space Grotesk",
+  "fontMono": "JetBrains Mono",
+  "_kit": "Every secondary kit colour is a tint of the paper or of the ink: no stray cyan, green, pink or violet (pink and violet would otherwise be derived from bg.light / bg.light2). Thick strokes and round corners, like the logo.",
+  "kit": {
+    "color": {
+      "ink": "#16141F",
+      "cyan": "#D9D4C7",
+      "green": "#F4F1EA",
+      "pink": "#A39E93",
+      "violet": "#6F6B66",
+      "steel": "#8C877D",
+      "grid": "rgba(244,241,234,0.14)"
+    },
+    "stroke": {
+      "thin": 4,
+      "base": 6,
+      "bold": 10
+    },
+    "radius": {
+      "sm": 10,
+      "md": 18,
+      "lg": 28
+    },
+    "depth": 8
+  }
+}

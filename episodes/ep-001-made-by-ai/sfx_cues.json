@@ -1,0 +1,257 @@
+{
+ "sound_kit": "default",
+ "fps": 30,
+ "stops": [
+  2.39,
+  11.6,
+  16.61,
+  19.81,
+  24.77
+ ],
+ "cues": [
+  {
+   "t": 1.42,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 2.39,
+   "role": "clapper",
+   "sound": "clapper",
+   "anchor": "onset",
+   "gain": 0.44,
+   "event": true
+  },
+  {
+   "t": 2.41,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 4.2,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 4.92,
+   "role": "riser",
+   "sound": "riser",
+   "anchor": "end",
+   "gain": 0.22
+  },
+  {
+   "t": 4.92,
+   "role": "whoosh",
+   "sound": "whoosh",
+   "anchor": "peak",
+   "gain": 0.3
+  },
+  {
+   "t": 4.92,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "anchor": "onset",
+   "gain": 0.42
+  },
+  {
+   "t": 5.16,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 6.26,
+   "role": "pop",
+   "sound": "pop",
+   "anchor": "onset",
+   "gain": 0.22,
+   "event": true
+  },
+  {
+   "t": 6.28,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 8.48,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 9.23,
+   "role": "thud",
+   "sound": "thud",
+   "anchor": "onset",
+   "gain": 0.22,
+   "event": true
+  },
+  {
+   "t": 9.25,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 11.6,
+   "role": "pop",
+   "sound": "pop",
+   "anchor": "onset",
+   "gain": 0.44,
+   "event": true
+  },
+  {
+   "t": 11.62,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 13.42,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 13.96,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 15.43,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 16.39,
+   "role": "riser",
+   "sound": "riser",
+   "anchor": "end",
+   "gain": 0.22
+  },
+  {
+   "t": 16.39,
+   "role": "whoosh",
+   "sound": "whoosh",
+   "anchor": "peak",
+   "gain": 0.3
+  },
+  {
+   "t": 16.39,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "anchor": "onset",
+   "gain": 0.42
+  },
+  {
+   "t": 17.96,
+   "role": "machine-stop",
+   "sound": "machine-stop",
+   "anchor": "onset",
+   "gain": 0.22,
+   "event": true
+  },
+  {
+   "t": 17.98,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 19.83,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 20.06,
+   "role": "pop",
+   "sound": "pop",
+   "anchor": "onset",
+   "gain": 0.44,
+   "event": true
+  },
+  {
+   "t": 20.53,
+   "role": "riser",
+   "sound": "riser",
+   "anchor": "end",
+   "gain": 0.22
+  },
+  {
+   "t": 20.53,
+   "role": "whoosh",
+   "sound": "whoosh",
+   "anchor": "peak",
+   "gain": 0.3
+  },
+  {
+   "t": 20.53,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "anchor": "onset",
+   "gain": 0.42
+  },
+  {
+   "t": 21.31,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 22.06,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 23.62,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 24.79,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 25.74,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 26.67,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  }
+ ]
+}

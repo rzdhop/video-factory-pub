@@ -215,11 +215,11 @@ export const Episode: React.FC<EpisodeProps> = ({ episode, episodeId }) => {
         )}
       </AbsoluteFill>
       {/* accent flash: the accent colour blooms behind the caption */}
-      {accentHit > 0 && (
+      {accentHit > 0 && (preset.caption.bloom ?? 1) > 0 && (
         <AbsoluteFill
           style={{
             background: `radial-gradient(ellipse at 50% ${captionY(preset, closeK) * 100 + (preset.caption.anchor === "bottom" ? -3 : 3)}%, ${preset.accent} 0%, rgba(0,0,0,0) 55%)`,
-            opacity: accentHit * 0.22,
+            opacity: accentHit * 0.22 * (preset.caption.bloom ?? 1),
           }}
         />
       )}
@@ -227,10 +227,10 @@ export const Episode: React.FC<EpisodeProps> = ({ episode, episodeId }) => {
       {/* opening: the title replaces the word-by-word captions, which resume with the block after it;
           it is drawn over the caption band */}
       <CaptionLayer preset={preset} block={open && blockIndex <= open.endIndex && blockIndex >= 0 ? null : block} blockIndex={blockIndex} t={t} width={width} height={height} closeK={closeK} />
-      {open && episode.opening && t < open.end + 0.1 && <OpeningCard preset={preset} title={episode.opening.title} words={episode.words} span={open} t={t} width={width} height={height} hudBottom={hudBottom} place={episode.opening.place} />}
+      {open && episode.opening && t < open.end + 0.1 && <OpeningCard preset={preset} title={episode.opening.title} words={episode.words} span={open} t={t} width={width} height={height} hudBottom={hudBottom} place={episode.opening.place} dy={episode.opening.dy} />}
       {flash > 0 && <AbsoluteFill style={{ background: flashLook.color, opacity: flash * flashLook.strength }} />}
       {/* punchline hit: a one-frame-ish white kiss, much lighter than a chapter flash */}
-      {hit > 0.6 && <AbsoluteFill style={{ background: "#fff", opacity: Math.min(0.14, (hit - 0.6) * 0.35) }} />}
+      {hit > 0.6 && (preset.camera.hitFlash ?? 1) > 0 && <AbsoluteFill style={{ background: "#fff", opacity: Math.min(0.14, (hit - 0.6) * 0.35) * (preset.camera.hitFlash ?? 1) }} />}
     </AbsoluteFill>
   );
 };

@@ -36,14 +36,24 @@ export const CaptionBand: React.FC<{ y: number; strength: number; height: number
 };
 
 /** A heavy outline made of stacked shadows: readable on any scene, and it renders the same in every Chrome. */
-export const outline = (px: number, color: string) => {
+export const outline = (px: number, color: string, soft = 1) => {
   const parts: string[] = [];
   for (let i = 0; i < 16; i++) {
     const a = (i / 16) * Math.PI * 2;
     parts.push(`${(Math.cos(a) * px).toFixed(1)}px ${(Math.sin(a) * px).toFixed(1)}px 0 ${color}`);
   }
-  parts.push(`0 ${px + 4}px 0 ${color}`, `0 ${px + 10}px 26px rgba(0,0,0,0.6)`);
+  parts.push(`0 ${px + 4}px 0 ${color}`);
+  // the blurred shadow under the outline; a look softens or removes it (`caption.softShadow`)
+  if (soft > 0) parts.push(`0 ${px + 10}px 26px rgba(0,0,0,${soft === 1 ? 0.6 : +(0.6 * soft).toFixed(3)})`);
   return parts.join(", ");
+};
+
+/** Glow of an accent word as a text-shadow part ("" when the look turns it off with `caption.glow: 0`). */
+export const accentGlow = (preset: { accent: string; caption: { glow?: number } }, blur: number) => {
+  const g = preset.caption.glow ?? 1;
+  if (g <= 0) return "";
+  const a = g === 1 ? "AA" : Math.round(Math.min(1, g) * 170).toString(16).padStart(2, "0").toUpperCase();
+  return `, 0 0 ${blur}px ${preset.accent}${a}`;
 };
 
 export const vowels = (w: string) => Math.max(1, (w.toLowerCase().match(/[aeiouyàâäéèêëîïôöùûü]+/g) ?? []).length);
@@ -94,7 +104,7 @@ export const Captions: React.FC<CaptionsProps> = ({ preset, block, blockIndex = 
           color: preset.textPrimary,
           letterSpacing: "0.01em",
           transform: `rotate(${lean}deg)`,
-          textShadow: outline(7, "#0B0B10"),
+          textShadow: outline(7, "#0B0B10", cap.softShadow ?? 1),
         }}
       >
         {words.map((w, i) => {
@@ -113,8 +123,10 @@ export const Captions: React.FC<CaptionsProps> = ({ preset, block, blockIndex = 
                   opacity: visible ? clamp01(age / 0.05) : 0,
                   color: isAccent ? preset.accent : undefined,
                   fontSize: isAccent ? "1.14em" : undefined,
+                  // the accent word is bigger, leans and carries its own outline: it gets extra room on both sides
+                  margin: isAccent ? "0 0.09em" : undefined,
                   transform: `translateY(${visible ? (1 - Math.min(1, k)) * 26 : 26}px) scale(${scale}) rotate(${isAccent ? -lean * 1.5 : 0}deg)`,
-                  textShadow: isAccent ? `${outline(7, "#0B0B10")}, 0 0 34px ${preset.accent}AA` : undefined,
+                  textShadow: isAccent ? `${outline(7, "#0B0B10", cap.softShadow ?? 1)}${accentGlow(preset, 34)}` : undefined,
                 }}
               >
                 {w}
