@@ -26,7 +26,7 @@ Counts: 12 true · 5 imprecise · 0 false · 1 unverifiable from here. 1 ERROR, 
 | 14 | "After a day and a week, the numbers shape the next one." | imprecise (WARN) | The rule exists: `docs/PUBLISH.md` step 7 "Numbers at about 24 h and 7 days after the slot"; `docs/RETENTION.md` §6 ("writes one dated line in the format's Lessons learned, and changes these rules when the numbers contradict them"); `tools/stats.py` docstring. But it has never happened in this repo: `stats/videos.json` is `[]`, the "Lessons learned" of `formats/humour-express.md` is empty, the only brand of `brands/brands.json` is `pending` with no scheduler id. Said in the present, after "For this video", it reads as a record. | `the *numbers* | will shape the *next* one.` |
 | 15 | "It's open source" | true | `LICENSE`; public repo (orchestrator) | none |
 | 16 | "MIT licensed" | true for the repo's own code; to disclose (WARN) | `LICENSE` l.1 "MIT License", "Copyright (c) 2026 video-factory contributors"; `package.json` l.13 `"license": "SEE LICENSE IN LICENSE"`. The engine cannot render without Remotion (`package.json` l.22, l.25), which is not MIT: `node_modules/remotion/LICENSE.md`, free for individuals, non-profits and for-profit organizations "with up to 3 employees", "a company license is required for for-profit organizations of a certain size". Nothing in `README.md`, `docs/` or `CLAUDE.md` says so. | Spoken line unchanged. Add one line to `README.md` and to the post description: "Rendering uses Remotion, which has its own licence (company licence above 3 employees)." |
-| 17 | "The code's on GitHub" | unverifiable from here (WARN) | The orchestrator states the repo is public. This folder has no `.git` and `README.md` l.15 still says `git clone https://github.com/rzdhop/video-factory-pub`. Open the public URL logged out before the post, and replace `https://github.com/rzdhop/video-factory-pub`. | none |
+| 17 | "The code's on GitHub" | unverifiable from here (WARN) | The orchestrator states the repo is public. This folder has no `.git`, and at check time `README.md` held a placeholder instead of the clone address. Resolved since: the README gives https://github.com/rzdhop/video-factory-pub. Open that URL logged out before the post. | none |
 | 18 | "link in the description." | imprecise (WARN) | A brand of this method is one Instagram + one TikTok account (`CLAUDE.md` l.54); a URL in a caption there is not clickable. `docs/RETENTION.md` §4 l.66 names the allowed places: "... or a link in the bio. One place". True as said only where the description carries a working link (YouTube, the repo page). | On Instagram / TikTok: `link in the *bio*.` (and put it there); elsewhere keep |
 
 ## Values and words on screen
@@ -53,7 +53,7 @@ Counts: 12 true · 5 imprecise · 0 false · 1 unverifiable from here. 1 ERROR, 
 - "MIT licensed" with no mention that the renderer (Remotion) needs a company licence above 3 employees (claim 16).
 - "Open source" covers the code only: a real voice and the scheduling need paid third-party accounts. `README.md` says the demo "needs no account and no credit", which is the honest counterpart; keep it visible in the description.
 - "the numbers shape the next one" with an empty `stats/videos.json` (claim 14).
-- A GitHub link announced while `README.md` still holds `https://github.com/rzdhop/video-factory-pub` (claim 17).
+- A GitHub link announced while `README.md` held a placeholder instead of the clone address (claim 17; resolved since, the README gives https://github.com/rzdhop/video-factory-pub).
 
 ## Simplifications to disclose (acceptable in speech)
 - "a day and a week" = "about 24 h and 7 days".
@@ -77,7 +77,7 @@ The empty director's chair, the conveyor and its stations, the paper hand, the Y
 
 ## WARN (should fix)
 1. Claim 18: "link in the description" becomes "link in the *bio*" on Instagram / TikTok, and the link must really be there.
-2. Claim 17: confirm the public GitHub URL (logged out) and replace `https://github.com/rzdhop/video-factory-pub` in `README.md` before publication.
+2. Claim 17: confirm the public GitHub URL (logged out) and write it in `README.md` before publication (written since: https://github.com/rzdhop/video-factory-pub).
 3. Claim 16: state the Remotion licence in `README.md` and in the post description.
 4. Claim 14: "will shape the next one" (nothing has been measured yet).
 5. Claim 11: add the planned sounds with a `strong` score before the voice, or say "scored, not heard"; conditions of claims 8 and 9 to confirm at the render (generated voice, scenes in code only).

@@ -50,7 +50,7 @@ by the orchestrator (the main session, which talks to the user). The independent
 | 12 | "The engine and its rulebook are open source" | true for the repo's own code and method; see the Remotion note below | `LICENSE` l.1 "MIT License"; public repo https://github.com/rzdhop/video-factory-pub (confirmed by the orchestrator). "rulebook" = `CLAUDE.md`, `docs/`, `formats/`, `skill/video-factory/`, `.claude/agents/` |
 | 13 | "your AI can make yours." | true, with a simplification to disclose (below) | `README.md` "Using it with Claude" l.77-83 and "Make it yours"; the demo "needs no account and no credit" (`README.md` "Try the demo") |
 | 14 | "Would you give an AI the director's chair?" | a question, not a claim | |
-| 15 | "The code's on GitHub" | true | https://github.com/rzdhop/video-factory-pub, public, MIT (confirmed by the orchestrator). To do before the post: replace `https://github.com/rzdhop/video-factory-pub` in `README.md` l.15 |
+| 15 | "The code's on GitHub" | true | https://github.com/rzdhop/video-factory-pub, public, MIT (confirmed by the orchestrator). `README.md` gives this address in its Install section |
 | 16 | "link in the bio." | true only if the link is in the bio of the account when the video goes out | `docs/RETENTION.md` §4: the end line names ONE place, "a link in the bio", "only a place that exists when the video goes out" |
 
 **Words drawn on screen**

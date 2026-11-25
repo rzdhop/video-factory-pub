@@ -30,6 +30,32 @@ export VF_CONCURRENCY=2            # optional: frames rendered in parallel
 ```
 `VF_CHROME` and `VF_CONCURRENCY` are read by `remotion.config.ts`. Without them it takes the first Chrome or Chromium it finds at a usual path (else the browser Remotion downloads itself) and the number of cores, at most 2.
 
+## Let your AI install it
+If you work with a coding assistant that can run commands on your machine (Claude Code or a similar agent), paste this prompt and let it do the install:
+
+```text
+Install the open video engine "video-factory" on this machine and prove that it works.
+
+1. Read the README of https://github.com/rzdhop/video-factory-pub, in particular the section "If you are an AI installing this repo", and follow it.
+2. Check the requirements (Node 22, Python 3.10 or later, ffmpeg, espeak-ng, Chrome or Chromium). Tell me what is missing and ask me before installing anything system-wide or with admin rights.
+3. Clone the repo into a folder named video-factory in my current directory, then run the install commands of the README.
+4. Run the demo: check, stills, then the draft render of ep-000-demo.
+5. Report in a few lines: what was installed, what each demo command returned, and the path of the draft video.
+
+Do not create any account, do not spend any credit, do not publish anything and do not fill any settings file: the demo needs none of that.
+```
+
+## If you are an AI installing this repo
+This section is written for an AI agent asked to install video-factory for someone.
+
+- **Before installing.** Check each line of "Requirements" with the tool's own version command. Report what is missing; ask the person before any system-wide install or any command that needs admin rights. The tools are bash and Python scripts: on Windows, run them from a bash shell.
+- **Install.** Run the commands of "Install" in order. `tools/setup_sound.sh` downloads about 1.1 GB of models: say so before running it. Set `VF_CHROME` only if no browser is found, and never write a machine path in the code.
+- **Prove it works.** Run the three commands of "Try the demo". The install is done when `tools/check.sh ep-000-demo` ends without an ERROR and the draft video exists in `out/`. If a command fails, report the command and its output as they are; do not edit the engine to make a check pass.
+- **Leave the placeholders alone.** `brands/brands.json`, `voices/catalog.json`, `characters/voices.json` and `docs/CONNECTORS.md` ship with placeholder values (`REPLACE_ME`, `null`). Never fill them with an invented id, handle or voice. They are filled later, with the person, when a step needs them ("Make it yours").
+- **Spend and publish nothing.** The demo needs no account and no credit. Creating an account, spending voice credits, scheduling or publishing always waits for the person's explicit yes.
+- **Then read the method.** `CLAUDE.md` is the working method for any session in this repo (phases, gates, what waits for the person). `skill/video-factory/SETUP.md` explains how to install the method as a skill and how to connect the optional services.
+- **Never commit** `node_modules`, `out` or `public/episodes`.
+
 ## Try the demo
 `episodes/ep-000-demo` is a tiny English episode with a placeholder voice made by espeak. It needs no account and no credit.
 ```bash
