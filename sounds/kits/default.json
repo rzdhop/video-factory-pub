@@ -1,0 +1,16 @@
+{
+ "id": "default",
+ "description": "House kit: every role is the library sound that scored best against its description (tools/sound_lib.py). Transitions and accents are synthesized (earshot bank); the flush is a real recording.",
+ "roles": {
+  "riser": {"sound": "riser"},
+  "whoosh": {"sound": "whoosh"},
+  "cut_hit": {"sound": "cut-hit"},
+  "accent": {"sound": "tick"},
+  "plop": {"sound": "plop"},
+  "flush": {"sound": "flush"},
+  "thud": {"sound": "thud"},
+  "pop": {"sound": "pop"},
+  "ding": {"sound": "ding"},
+  "boom": {"sound": "boom"}
+ }
+}

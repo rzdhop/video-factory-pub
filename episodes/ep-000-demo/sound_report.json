@@ -1,0 +1,89 @@
+{
+ "episode": "ep-000-demo",
+ "errors": [],
+ "warnings": [],
+ "info": [
+  "7 library sound(s), all synthesized or public domain: no credit owed",
+  "music and effects sit 10.1 dB under the voice while it speaks",
+  "6 effects (plan events and cut hits) sit -3 to +6 dB from the loud syllables of the voice, inside the validated range (-8 to +10)",
+  "earshot heard 83 % of the 6 effects within one frame of their cue (median offset 8.2 ms)"
+ ],
+ "credits": [],
+ "bed_under_voice_db": -10.1,
+ "mix_peak_dbfs": -1.2,
+ "effects": [
+  {
+   "t": 2.527,
+   "role": "ding",
+   "sound": "ding",
+   "fx_db": -18.0,
+   "over_bed_db": 26.7,
+   "vs_voice_db": -2.6
+  },
+  {
+   "t": 3.815,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "fx_db": -15.4,
+   "over_bed_db": 17.5,
+   "vs_voice_db": 0.0
+  },
+  {
+   "t": 7.011,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "fx_db": -15.2,
+   "over_bed_db": 17.0,
+   "vs_voice_db": 0.2
+  },
+  {
+   "t": 10.92,
+   "role": "thud",
+   "sound": "thud",
+   "fx_db": -9.7,
+   "over_bed_db": 24.1,
+   "vs_voice_db": 5.7
+  },
+  {
+   "t": 12.173,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "fx_db": -15.6,
+   "over_bed_db": 9.5,
+   "vs_voice_db": -0.2
+  },
+  {
+   "t": 14.135,
+   "role": "pop",
+   "sound": "pop",
+   "fx_db": -14.1,
+   "over_bed_db": 34.7,
+   "vs_voice_db": 1.3
+  }
+ ],
+ "sync": {
+  "stats": {
+   "n": 6,
+   "hit_within_1_frame": 0.833,
+   "hit_within_100ms": 1.0,
+   "median_abs_offset_ms": 8.2,
+   "answered_by_swell": 0,
+   "answered_by_level_peak": 0,
+   "no_sound": [],
+   "frame_ms": 33.3,
+   "chance_within_1_frame": 0.446,
+   "chance_within_100ms": 0.889,
+   "accent_min_db": 15.6,
+   "accent_within_1_frame": 0.333,
+   "accent_chance_within_1_frame": 0.077,
+   "accent_within_100ms": 0.5,
+   "accent_chance_within_100ms": 0.191
+  },
+  "not_ok": []
+ },
+ "mix_loudness": {
+  "integrated_lufs": -17.8,
+  "true_peak_dbtp": -1.2,
+  "lra_lu": 1.8
+ }
+}

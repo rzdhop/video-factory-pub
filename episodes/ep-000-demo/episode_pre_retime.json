@@ -1,0 +1,167 @@
+{
+ "id": "ep-000-demo",
+ "title": "Why is the sky blue?",
+ "preset": "dark-2d",
+ "character": "host",
+ "fps": 30,
+ "format": "humour-express",
+ "layout": 2,
+ "opening": {
+  "title": "WHY IS THE | SKY *BLUE*?"
+ },
+ "lang": "en",
+ "voice": {
+  "file": "voice.wav",
+  "lang": "en",
+  "engine": "espeak-ng"
+ },
+ "duration": 16.36,
+ "chapters": [
+  {
+   "key": "hook",
+   "label": "THE · HOOK",
+   "scene": "ep000-hook",
+   "hud": {},
+   "t_start": 0.0,
+   "t_end": 4.035
+  },
+  {
+   "key": "preuve",
+   "label": "THE · PROOF",
+   "scene": "ep000-preuve",
+   "hud": {},
+   "t_start": 4.035,
+   "t_end": 7.231
+  },
+  {
+   "key": "twist",
+   "label": "THE · TWIST",
+   "scene": "ep000-twist",
+   "hud": {},
+   "t_start": 7.231,
+   "t_end": 12.393
+  },
+  {
+   "key": "question",
+   "label": "AND · YOU?",
+   "scene": "ep000-question",
+   "hud": {},
+   "t_start": 12.393,
+   "t_end": 15.36
+  }
+ ],
+ "words": [
+  {
+   "text": "Why is the",
+   "t_start": 0.0,
+   "t_end": 0.68,
+   "accent": null,
+   "chapter": "hook"
+  },
+  {
+   "text": "sky blue?",
+   "t_start": 0.68,
+   "t_end": 1.291,
+   "accent": "blue",
+   "chapter": "hook"
+  },
+  {
+   "text": "Sunlight holds",
+   "t_start": 1.491,
+   "t_end": 2.527,
+   "accent": null,
+   "chapter": "hook"
+  },
+  {
+   "text": "every color.",
+   "t_start": 2.527,
+   "t_end": 3.415,
+   "accent": "color",
+   "chapter": "hook"
+  },
+  {
+   "text": "Air scatters",
+   "t_start": 4.035,
+   "t_end": 4.828,
+   "accent": "scatters",
+   "chapter": "preuve"
+  },
+  {
+   "text": "blue light",
+   "t_start": 4.828,
+   "t_end": 5.488,
+   "accent": null,
+   "chapter": "preuve"
+  },
+  {
+   "text": "far more",
+   "t_start": 5.488,
+   "t_end": 6.017,
+   "accent": null,
+   "chapter": "preuve"
+  },
+  {
+   "text": "than red.",
+   "t_start": 6.017,
+   "t_end": 6.611,
+   "accent": "red",
+   "chapter": "preuve"
+  },
+  {
+   "text": "So blue comes",
+   "t_start": 7.231,
+   "t_end": 8.106,
+   "accent": null,
+   "chapter": "twist"
+  },
+  {
+   "text": "from everywhere.",
+   "t_start": 8.106,
+   "t_end": 9.184,
+   "accent": "everywhere",
+   "chapter": "twist"
+  },
+  {
+   "text": "At sunset,",
+   "t_start": 9.384,
+   "t_end": 10.237,
+   "accent": null,
+   "chapter": "twist"
+  },
+  {
+   "text": "the blue",
+   "t_start": 10.237,
+   "t_end": 10.92,
+   "accent": null,
+   "chapter": "twist"
+  },
+  {
+   "text": "gets lost.",
+   "t_start": 10.92,
+   "t_end": 11.773,
+   "accent": "lost",
+   "chapter": "twist"
+  },
+  {
+   "text": "So what color",
+   "t_start": 12.393,
+   "t_end": 13.377,
+   "accent": null,
+   "chapter": "question"
+  },
+  {
+   "text": "is the sky",
+   "t_start": 13.377,
+   "t_end": 14.135,
+   "accent": null,
+   "chapter": "question"
+  },
+  {
+   "text": "on Mars?",
+   "t_start": 14.135,
+   "t_end": 14.74,
+   "accent": "Mars",
+   "chapter": "question"
+  }
+ ]
+}

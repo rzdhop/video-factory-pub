@@ -1,0 +1,145 @@
+{
+ "sound_kit": "default",
+ "fps": 30,
+ "stops": [
+  10.92
+ ],
+ "cues": [
+  {
+   "t": 0.7,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 2.527,
+   "role": "ding",
+   "sound": "ding",
+   "anchor": "onset",
+   "gain": 0.33,
+   "event": true
+  },
+  {
+   "t": 2.547,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 3.815,
+   "role": "riser",
+   "sound": "riser",
+   "anchor": "end",
+   "gain": 0.22
+  },
+  {
+   "t": 3.815,
+   "role": "whoosh",
+   "sound": "whoosh",
+   "anchor": "peak",
+   "gain": 0.3
+  },
+  {
+   "t": 3.815,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "anchor": "onset",
+   "gain": 0.42
+  },
+  {
+   "t": 4.055,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 6.037,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 7.011,
+   "role": "riser",
+   "sound": "riser",
+   "anchor": "end",
+   "gain": 0.22
+  },
+  {
+   "t": 7.011,
+   "role": "whoosh",
+   "sound": "whoosh",
+   "anchor": "peak",
+   "gain": 0.3
+  },
+  {
+   "t": 7.011,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "anchor": "onset",
+   "gain": 0.42
+  },
+  {
+   "t": 8.126,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 10.92,
+   "role": "thud",
+   "sound": "thud",
+   "anchor": "onset",
+   "gain": 0.495,
+   "event": true
+  },
+  {
+   "t": 10.94,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  },
+  {
+   "t": 12.173,
+   "role": "riser",
+   "sound": "riser",
+   "anchor": "end",
+   "gain": 0.22
+  },
+  {
+   "t": 12.173,
+   "role": "whoosh",
+   "sound": "whoosh",
+   "anchor": "peak",
+   "gain": 0.3
+  },
+  {
+   "t": 12.173,
+   "role": "cut_hit",
+   "sound": "cut-hit",
+   "anchor": "onset",
+   "gain": 0.42
+  },
+  {
+   "t": 14.135,
+   "role": "pop",
+   "sound": "pop",
+   "anchor": "onset",
+   "gain": 0.33,
+   "event": true
+  },
+  {
+   "t": 14.155,
+   "role": "accent",
+   "sound": "tick",
+   "anchor": "onset",
+   "gain": 0.1
+  }
+ ]
+}

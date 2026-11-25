@@ -1,0 +1,45 @@
+{
+  "_how_to": "Copy this file to looks/<id>.json, set \"id\" to the file name, edit the values, delete what you do not change. Keys starting with \"_\" are comments (ignored by the tools). Check with `python3 tools/looks.py`, look at it with `python3 tools/looks.py preview <id>`, use it with `\"look\": \"<id>\"` in plan.json or series/<slug>/look.json. Full list of keys: docs/LOOKS.md.",
+  "id": "_TEMPLATE",
+  "extends": "dark-2d",
+  "description": "One line: the mood of this look and what kind of video it is for.",
+
+  "_bg": "The set. top / bottom: the wall gradient (keep them dark or mid-tone: captions are white). light / light2: the two drifting coloured lights. dust: number of floating specks. spot: strength of the stage spotlight (0..1.5). floor / grid: true or false.",
+  "bg": {
+    "top": "#1E2A44",
+    "bottom": "#0B0F1A",
+    "light": "#3D7BFF",
+    "light2": "#22D3A6",
+    "dust": 24,
+    "spot": 1.0
+  },
+
+  "_accent": "accent: THE colour of the look (accent word of the captions, progress bar, the object the video is about). accentAlt: the second colour (danger, contrast).",
+  "accent": "#FFC53D",
+  "accentAlt": "#FF5A5F",
+
+  "_fonts": "Installed families: Anton, Bebas Neue, Archivo Black, DM Serif Display (display); Inter, Space Grotesk (text); JetBrains Mono (mono). Another family needs an @fontsource import in src/Root.tsx.",
+  "fontKinetic": "Anton",
+  "fontHud": "Inter",
+  "fontMono": "JetBrains Mono",
+
+  "_kit": "How the kit parts (src/kit) are drawn: extra colours, stroke widths, corner radii, depth of the shadow side.",
+  "kit": {
+    "color": {
+      "cyan": "#7CE0FF",
+      "green": "#5BD66A",
+      "pink": "#FF7AC3"
+    },
+    "stroke": {
+      "thin": 3,
+      "base": 5,
+      "bold": 8
+    },
+    "radius": {
+      "sm": 8,
+      "md": 14,
+      "lg": 22
+    },
+    "depth": 8
+  }
+}

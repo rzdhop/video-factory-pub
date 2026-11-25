@@ -1,0 +1,55 @@
+{
+  "id": "ai-full",
+  "name": "Vidéo 100 % IA",
+  "status": "new",
+  "summary": "Fully AI-generated pictures, clips and voices through an outside generation service; no Remotion code.",
+  "production": "ai",
+  "default_character": "none",
+  "preset": "dark-2d",
+  "duration_s": {
+    "min": 30,
+    "target": 60,
+    "max": 180
+  },
+  "words": {
+    "min": 0,
+    "max": 400
+  },
+  "chapters": {
+    "min": 1,
+    "max": 30
+  },
+  "tone": {
+    "register": "story",
+    "vulgarity": "none",
+    "insults": false
+  },
+  "music": {
+    "bpm": 0,
+    "level_db": -16
+  },
+  "big_sfx_every_s": [
+    0,
+    0
+  ],
+  "voice": {
+    "catalog": "narrator",
+    "voice": "Narrator (placeholder)",
+    "voice_id": "REPLACE_ME",
+    "provider": "REPLACE_ME",
+    "model": "REPLACE_ME",
+    "tags": []
+  },
+  "ending": "free",
+  "gates": [
+    "concept",
+    "universe",
+    "cast",
+    "script",
+    "final"
+  ],
+  "agents": [
+    "script-critic"
+  ],
+  "sheet": "formats/ai-full.md"
+}

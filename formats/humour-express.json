@@ -1,0 +1,61 @@
+{
+  "id": "humour-express",
+  "name": "Humour express",
+  "status": "new",
+  "summary": "30-40 s absurd-science joke with the host: hook card at frame 0, no greeting, one fact, one twist, one question.",
+  "production": "code",
+  "default_character": "host",
+  "preset": "dark-2d",
+  "duration_s": {
+    "min": 25,
+    "target": 35,
+    "max": 42
+  },
+  "words": {
+    "min": 85,
+    "max": 115
+  },
+  "chapters": {
+    "min": 3,
+    "max": 4
+  },
+  "tone": {
+    "register": "satire",
+    "vulgarity": "max",
+    "insults": true
+  },
+  "music": {
+    "bpm": 100,
+    "level_db": -15
+  },
+  "big_sfx_every_s": [
+    7,
+    10
+  ],
+  "voice": {
+    "catalog": "host-voice",
+    "voice": "Host voice (placeholder)",
+    "voice_id": "REPLACE_ME",
+    "provider": "REPLACE_ME",
+    "model": "REPLACE_ME",
+    "tags": [
+      "[sarcastic]",
+      "[dramatically]",
+      "[curious]"
+    ]
+  },
+  "ending": "question",
+  "gates": [
+    "brief",
+    "script",
+    "voice-go",
+    "final"
+  ],
+  "agents": [
+    "fact-checker",
+    "script-critic",
+    "scene-builder",
+    "qa-stills"
+  ],
+  "sheet": "formats/humour-express.md"
+}

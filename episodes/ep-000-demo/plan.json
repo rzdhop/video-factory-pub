@@ -1,0 +1,128 @@
+{
+ "id": "ep-000-demo",
+ "title": "Why is the sky blue?",
+ "format": "humour-express",
+ "lang": "en",
+ "layout": 2,
+ "preset": "dark-2d",
+ "character": "host",
+ "opening": {
+  "title": "WHY IS THE | SKY *BLUE*?"
+ },
+ "fps": 30,
+ "voice": {
+  "engine": "espeak-ng",
+  "voice": "en-us",
+  "rate": 142,
+  "pitch": 40,
+  "gap_sentence_ms": 200,
+  "gap_chapter_ms": 420
+ },
+ "chapters": [
+  {
+   "key": "hook",
+   "label": "THE · HOOK",
+   "scene": "ep000-hook",
+   "hud": {}
+  },
+  {
+   "key": "preuve",
+   "label": "THE · PROOF",
+   "scene": "ep000-preuve",
+   "hud": {}
+  },
+  {
+   "key": "twist",
+   "label": "THE · TWIST",
+   "scene": "ep000-twist",
+   "hud": {}
+  },
+  {
+   "key": "question",
+   "label": "AND · YOU?",
+   "scene": "ep000-question",
+   "hud": {}
+  }
+ ],
+ "music": {
+  "bpm": 100,
+  "level_db": -18
+ },
+ "sound_kit": "default",
+ "sfx_events": [
+  {
+   "chapter": "hook",
+   "word": "color",
+   "kind": "ding",
+   "gain": 0.3
+  },
+  {
+   "chapter": "twist",
+   "word": "lost",
+   "kind": "thud",
+   "gain": 0.45
+  },
+  {
+   "chapter": "question",
+   "word": "Mars",
+   "kind": "pop",
+   "gain": 0.3
+  }
+ ],
+ "direction": [
+  {
+   "chapter": "hook",
+   "word": "sky",
+   "emotion": "curious"
+  },
+  {
+   "chapter": "hook",
+   "word": "Sunlight",
+   "emotion": "happy",
+   "shot": "bust"
+  },
+  {
+   "chapter": "hook",
+   "word": "color",
+   "emotion": "amazed",
+   "gesture": "point",
+   "shot": "bust"
+  },
+  {
+   "chapter": "preuve",
+   "word": "scatters",
+   "emotion": "smug"
+  },
+  {
+   "chapter": "preuve",
+   "word": "red",
+   "emotion": "happy",
+   "gesture": "balance"
+  },
+  {
+   "chapter": "twist",
+   "word": "everywhere",
+   "emotion": "amazed"
+  },
+  {
+   "chapter": "twist",
+   "word": "lost",
+   "emotion": "deadpan",
+   "shot": "close"
+  },
+  {
+   "chapter": "question",
+   "word": "what color",
+   "emotion": "curious",
+   "shot": "bust"
+  },
+  {
+   "chapter": "question",
+   "word": "Mars",
+   "emotion": "wink",
+   "gesture": "shrug",
+   "shot": "bust"
+  }
+ ],
+ "follow_call": false
+}

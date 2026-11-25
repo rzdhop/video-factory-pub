@@ -1,0 +1,61 @@
+{
+  "id": "humour-host",
+  "name": "Humour avec hôte",
+  "status": "validated",
+  "summary": "Absurd funny plot told by a host avatar, heavy swearing, true science.",
+  "production": "code",
+  "default_character": "host",
+  "preset": "dark-2d",
+  "duration_s": {
+    "min": 45,
+    "target": 55,
+    "max": 75
+  },
+  "words": {
+    "min": 130,
+    "max": 180
+  },
+  "chapters": {
+    "min": 5,
+    "max": 7
+  },
+  "tone": {
+    "register": "satire",
+    "vulgarity": "max",
+    "insults": true
+  },
+  "music": {
+    "bpm": 100,
+    "level_db": -15
+  },
+  "big_sfx_every_s": [
+    8,
+    12
+  ],
+  "voice": {
+    "catalog": "host-voice",
+    "voice": "Host voice (placeholder)",
+    "voice_id": "REPLACE_ME",
+    "provider": "REPLACE_ME",
+    "model": "REPLACE_ME",
+    "tags": [
+      "[sarcastic]",
+      "[dramatically]",
+      "[curious]"
+    ]
+  },
+  "ending": "question",
+  "gates": [
+    "brief",
+    "script",
+    "voice-go",
+    "final"
+  ],
+  "agents": [
+    "fact-checker",
+    "script-critic",
+    "scene-builder",
+    "qa-stills"
+  ],
+  "sheet": "formats/humour-host.md"
+}

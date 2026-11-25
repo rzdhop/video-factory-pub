@@ -1,0 +1,23 @@
+{
+ "example-shelf": {
+  "kind": "solo",
+  "brand": "my-brand",
+  "label": {
+   "fr": "EXEMPLE",
+   "en": "EXAMPLE"
+  },
+  "sub": {
+   "fr": "UN ÉPISODE · SE REGARDE SEUL",
+   "en": "ONE EPISODE · STANDS ALONE"
+  },
+  "tag": {
+   "fr": "Exemple",
+   "en": "Example"
+  },
+  "color": "#FFC53D",
+  "hashtag": "#example",
+  "default_for": {
+   "character": "host"
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "host-voice": {
+  "voice_id": "REPLACE_ME",
+  "name": "Host voice (placeholder)",
+  "use": "The voice of the template host character. Replace voice_id with a voice of your speech provider.",
+  "status": "placeholder",
+  "status_en": "placeholder",
+  "provider": "REPLACE_ME",
+  "model": "REPLACE_ME"
+ },
+ "narrator": {
+  "voice_id": "REPLACE_ME",
+  "name": "Narrator (placeholder)",
+  "use": "The narrator of hostless formats. Replace voice_id with a voice of your speech provider.",
+  "status": "placeholder",
+  "status_en": "placeholder",
+  "provider": "REPLACE_ME",
+  "model": "REPLACE_ME"
+ }
+}

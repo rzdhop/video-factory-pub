@@ -1,0 +1,59 @@
+{
+  "id": "montage",
+  "name": "Montage",
+  "status": "new",
+  "summary": "Video-editor style cut: your own footage and images plus licensed stock, voice-over, captions, motion-design inserts.",
+  "production": "montage",
+  "default_character": "none",
+  "preset": "dark-2d",
+  "duration_s": {
+    "min": 40,
+    "target": 60,
+    "max": 120
+  },
+  "words": {
+    "min": 120,
+    "max": 300
+  },
+  "chapters": {
+    "min": 4,
+    "max": 9
+  },
+  "tone": {
+    "register": "free",
+    "vulgarity": "none",
+    "insults": false
+  },
+  "music": {
+    "bpm": 100,
+    "level_db": -16
+  },
+  "big_sfx_every_s": [
+    10,
+    15
+  ],
+  "voice": {
+    "catalog": "narrator",
+    "voice": "Narrator (placeholder)",
+    "voice_id": "REPLACE_ME",
+    "provider": "REPLACE_ME",
+    "model": "REPLACE_ME",
+    "tags": [
+      "[curious]"
+    ]
+  },
+  "ending": "question",
+  "gates": [
+    "brief",
+    "script+asset-list",
+    "voice-go",
+    "final"
+  ],
+  "agents": [
+    "fact-checker",
+    "script-critic",
+    "asset-scout",
+    "qa-stills"
+  ],
+  "sheet": "formats/montage.md"
+}

@@ -1,0 +1,253 @@
+{
+ "version": 1,
+ "sounds": {
+  "boom": {
+   "source": "earshot-bank",
+   "bank_id": "impact/blast",
+   "seed": 0,
+   "edits": {
+    "dur": {
+     "target": 1.6,
+     "method": "trim",
+     "renders": 1,
+     "fit": "trim 4159 ms"
+    }
+   },
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a cinematic boom impact",
+    "z": 3.83,
+    "verdict": "strong",
+    "sounds_most_like": "an explosion (z +3.8)"
+   },
+   "dur_s": 1.6,
+   "onset_s": 0.0005,
+   "peak_s": 0.0222,
+   "loud_db": -10.86,
+   "file": "files/boom.wav",
+   "sha256": "308b8b357c771f3c770c9e7033d7e89dd284de2adc5cdb6ba04c0f32cc28aede",
+   "added": "2026-11-13"
+  },
+  "cut-hit": {
+   "source": "earshot-bank",
+   "bank_id": "cut_hit/punch",
+   "seed": 4103,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a punchy impact hit",
+    "z": 3.35,
+    "verdict": "strong",
+    "sounds_most_like": "a punchy kick drum pattern (z +4.6)"
+   },
+   "dur_s": 0.2823,
+   "onset_s": 0.0005,
+   "peak_s": 0.05,
+   "loud_db": -8.43,
+   "file": "files/cut-hit.wav",
+   "sha256": "14b70d17fff2d1ab0c053a7e05e991ff6da6e80a80139948d90f51382acd0557",
+   "added": "2026-11-13"
+  },
+  "ding": {
+   "source": "earshot-bank",
+   "bank_id": "fit/bell/small_bell",
+   "seed": 0,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a bell ding",
+    "z": 3.47,
+    "verdict": "strong",
+    "sounds_most_like": "a triangle hit (z +4.6)"
+   },
+   "dur_s": 0.766,
+   "onset_s": 0.0021,
+   "peak_s": 0.0619,
+   "loud_db": -6.72,
+   "file": "files/ding.wav",
+   "sha256": "f09beb94eacd6bb4c0da1a72a0470763edf27921f9415d77b606a44d9f132426",
+   "added": "2026-11-13"
+  },
+  "flush": {
+   "source": "openverse",
+   "provider": "wikimedia_audio",
+   "openverse_id": "a7023b44-b958-4642-a212-452b7f5563a0",
+   "title": "Toilet flush",
+   "creator": "ᐃᓄᒃᑎᑐᑦ",
+   "landing_url": "https://commons.wikimedia.org/w/index.php?curid=115330324",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Toilet_flush.flac",
+   "license": "cc0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+   "attribution": null,
+   "match": {
+    "query": "a toilet flushing",
+    "z": 6.19,
+    "verdict": "strong",
+    "sounds_most_like": "a toilet flushing (z +6.1)"
+   },
+   "dur_s": 3.0,
+   "onset_s": 0.0153,
+   "peak_s": 0.4192,
+   "loud_db": -9.88,
+   "file": "files/flush.wav",
+   "sha256": "ee844a63e66c54f0da2b9baac3524f915db9bbab17d13708a3b6c4ebc49d54ab",
+   "added": "2026-11-13"
+  },
+  "plop": {
+   "source": "earshot-bank",
+   "bank_id": "fit/pop/mouth_plop",
+   "seed": 0,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a water drop plop",
+    "z": 3.2,
+    "verdict": "strong",
+    "sounds_most_like": "a mouth pop (z +4.6)"
+   },
+   "dur_s": 0.1803,
+   "onset_s": 0.0056,
+   "peak_s": 0.0117,
+   "loud_db": -12.64,
+   "file": "files/plop.wav",
+   "sha256": "a682d310c145ecea840147b3cb2546d9dbb28a9dd66a8422f98dcc8052f6bd11",
+   "added": "2026-11-13"
+  },
+  "pop": {
+   "source": "earshot-bank",
+   "bank_id": "pop/0",
+   "seed": 1826701615,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a bubble pop",
+    "z": 4.25,
+    "verdict": "strong",
+    "sounds_most_like": "a cork pop (z +4.4)"
+   },
+   "dur_s": 0.1539,
+   "onset_s": 0.0003,
+   "peak_s": 0.0038,
+   "loud_db": -12.07,
+   "file": "files/pop.wav",
+   "sha256": "8036244f2974107ed881ebb06638065f370563572b7dceba726ff44aaae8588f",
+   "added": "2026-11-13"
+  },
+  "riser": {
+   "source": "earshot-bank",
+   "bank_id": "riser/shepard",
+   "seed": 1097657232,
+   "edits": {
+    "dur": {
+     "target": 0.9,
+     "method": "param",
+     "param": "length",
+     "value": 0.9,
+     "renders": 1,
+     "fit": "exact"
+    }
+   },
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a riser sweep building up",
+    "z": 3.53,
+    "verdict": "strong",
+    "sounds_most_like": "a reverse cymbal swell (z +3.4)"
+   },
+   "dur_s": 0.9,
+   "onset_s": 0.0029,
+   "peak_s": 0.878,
+   "loud_db": -8.48,
+   "file": "files/riser.wav",
+   "sha256": "8b3c1ff36349fd62dff7ab0993394d54386b05bccff9b06ebecd2a38b0f3e8ca",
+   "added": "2026-11-13"
+  },
+  "thud": {
+   "source": "earshot-bank",
+   "bank_id": "pro_pop_in/deep",
+   "seed": 1133510782,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a heavy thud impact",
+    "z": 3.4,
+    "verdict": "strong",
+    "sounds_most_like": "a punchy impact hit (z +4.4)"
+   },
+   "dur_s": 0.1371,
+   "onset_s": 0.0021,
+   "peak_s": 0.02,
+   "loud_db": -10.2,
+   "file": "files/thud.wav",
+   "sha256": "95593e15fbacc423b030f98ab54b4d81b25e5362cbcf7c25b9f3f86940a9b5cc",
+   "added": "2026-11-13"
+  },
+  "tick": {
+   "source": "earshot-bank",
+   "bank_id": "pro_click/snap",
+   "seed": 726570697,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a tick",
+    "z": 3.88,
+    "verdict": "strong",
+    "sounds_most_like": "crisp hi-hats (z +3.3)"
+   },
+   "dur_s": 0.047,
+   "onset_s": 0.0021,
+   "peak_s": 0.0024,
+   "loud_db": -20.88,
+   "file": "files/tick.wav",
+   "sha256": "9693265c4bc85a2d314cbdbdc92e63539d107eee3cd2390cb172e2669d97db0c",
+   "added": "2026-11-13"
+  },
+  "whoosh": {
+   "source": "earshot-bank",
+   "bank_id": "swish/stick",
+   "seed": 1442435298,
+   "edits": {},
+   "earshot": "v0.4.1",
+   "audit": "clean",
+   "license": "synthesized by the earshot bank (MIT)",
+   "attribution": null,
+   "match": {
+    "query": "a fast whoosh",
+    "z": 5.04,
+    "verdict": "strong",
+    "sounds_most_like": "a fast whoosh (z +5.0)"
+   },
+   "dur_s": 0.4,
+   "onset_s": 0.0244,
+   "peak_s": 0.0973,
+   "loud_db": -11.31,
+   "file": "files/whoosh.wav",
+   "sha256": "e86c03bb275a333043e7c1b91cc4c78335f8a9ecac71b60916259b3e93775b3f",
+   "added": "2026-11-13"
+  }
+ }
+}

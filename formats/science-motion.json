@@ -1,0 +1,60 @@
+{
+  "id": "science-motion",
+  "name": "Science sérieuse en motion design",
+  "status": "new",
+  "summary": "Serious natural-science explainer (physics, biology, space, maths): one phenomenon, built on screen step by step.",
+  "production": "code",
+  "default_character": "none",
+  "preset": "dark-2d",
+  "duration_s": {
+    "min": 50,
+    "target": 70,
+    "max": 100
+  },
+  "words": {
+    "min": 150,
+    "max": 260
+  },
+  "chapters": {
+    "min": 5,
+    "max": 7
+  },
+  "tone": {
+    "register": "wonder",
+    "vulgarity": "none",
+    "insults": false
+  },
+  "music": {
+    "bpm": 92,
+    "level_db": -18
+  },
+  "big_sfx_every_s": [
+    15,
+    20
+  ],
+  "voice": {
+    "catalog": "narrator",
+    "voice": "Narrator (placeholder)",
+    "voice_id": "REPLACE_ME",
+    "provider": "REPLACE_ME",
+    "model": "REPLACE_ME",
+    "tags": [
+      "[curious]",
+      "[calm]"
+    ]
+  },
+  "ending": "question",
+  "gates": [
+    "brief",
+    "script",
+    "voice-go",
+    "final"
+  ],
+  "agents": [
+    "fact-checker",
+    "script-critic",
+    "scene-builder",
+    "qa-stills"
+  ],
+  "sheet": "formats/science-motion.md"
+}

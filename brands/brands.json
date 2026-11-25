@@ -1,0 +1,21 @@
+{
+ "my-brand": {
+  "label": "My brand",
+  "default": true,
+  "status": "pending",
+  "scheduler_brand_id": null,
+  "instagram": null,
+  "tiktok": null,
+  "timezone": "UTC",
+  "lang": null,
+  "content": "REPLACE_ME: one line saying what this brand publishes.",
+  "series": [],
+  "notes": "Template entry. Fill the scheduler id and both handles, then set status to \"active\". `connectors` holds the account name of each outside tool for this brand (null = not connected).",
+  "weekly_target": null,
+  "connectors": {
+   "scheduler": null,
+   "storage": null,
+   "video": null
+  }
+ }
+}

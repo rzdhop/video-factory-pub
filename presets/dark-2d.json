@@ -1,0 +1,79 @@
+{
+  "name": "dark-2d",
+  "bg": {
+    "top": "#35275C",
+    "bottom": "#100E1A",
+    "grain": 0.06,
+    "light": "#6B4DFF",
+    "light2": "#FF4FD8",
+    "dust": 34
+  },
+  "accent": "#F2C14E",
+  "accentAlt": "#E23B2E",
+  "textPrimary": "#FFFFFF",
+  "textHud": "rgba(255,255,255,0.72)",
+  "lineColor": "rgba(255,255,255,0.85)",
+  "fontKinetic": "Anton",
+  "fontHud": "Inter",
+  "fontMono": "JetBrains Mono",
+  "caption": {
+    "position": "bottom",
+    "y": 0.635,
+    "size": 88,
+    "lineHeight": 0.98,
+    "enter": "pop",
+    "maxWidth": 0.86
+  },
+  "hud": {
+    "y": 0.075,
+    "labelSize": 30,
+    "counterSize": 78,
+    "dot": true,
+    "letterSpacing": 0.22
+  },
+  "camera": {
+    "zoom": 0.03
+  },
+  "sceneBox": {
+    "top": 0.17,
+    "bottom": 0.63
+  },
+  "layouts": {
+    "2": {
+      "textHud": "rgba(255,255,255,0.9)",
+      "hud": {
+        "y": 0.142,
+        "counterSize": 68,
+        "barAbove": 30,
+        "badge": "inline"
+      },
+      "sceneBox": {
+        "top": 0.2,
+        "bottom": 0.6
+      },
+      "caption": {
+        "anchor": "bottom",
+        "y": 0.58,
+        "closeY": 0.74,
+        "closeBand": 0.5
+      },
+      "host": {
+        "x": 260,
+        "eyeY": 0.685,
+        "scale": 0.8,
+        "propScale": 0.72
+      },
+      "hostless": {
+        "sceneBox": {
+          "top": 0.205,
+          "bottom": 0.74,
+          "mediaBottom": 0.79
+        },
+        "caption": {
+          "y": 0.73,
+          "band": 0.6
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "sim-3d",
+  "bg": {
+    "top": "#2E4BE0",
+    "bottom": "#1E35C8",
+    "grain": 0.0,
+    "grid": true
+  },
+  "accent": "#D8F53C",
+  "accentAlt": "#FFFFFF",
+  "textPrimary": "#FFFFFF",
+  "textHud": "rgba(255,255,255,0.72)",
+  "lineColor": "rgba(255,255,255,0.6)",
+  "fontKinetic": "Anton",
+  "fontHud": "JetBrains Mono",
+  "fontMono": "JetBrains Mono",
+  "caption": {
+    "position": "top",
+    "y": 0.12,
+    "size": 76,
+    "lineHeight": 1.0,
+    "enter": "cut",
+    "maxWidth": 0.88
+  },
+  "hud": {
+    "y": 0.065,
+    "labelSize": 20,
+    "counterSize": 0,
+    "dot": true,
+    "letterSpacing": 0.12,
+    "square": true
+  },
+  "camera": {
+    "zoom": 0.0
+  },
+  "sceneBox": {
+    "top": 0.3,
+    "bottom": 0.8
+  },
+  "layouts": {
+    "2": {
+      "textHud": "rgba(255,255,255,0.9)",
+      "hud": {
+        "y": 0.142,
+        "barAbove": 30,
+        "badge": "inline"
+      },
+      "caption": {
+        "y": 0.18
+      }
+    }
+  }
+}
